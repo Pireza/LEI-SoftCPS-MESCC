@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks" xmlns:PortsAndFlows="http://www.eclipse.org/papyrus/sysml/1.6/SysML/PortsAndFlows" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks http://www.eclipse.org/papyrus/sysml/1.6/SysML#//blocks http://www.eclipse.org/papyrus/sysml/1.6/SysML/PortsAndFlows http://www.eclipse.org/papyrus/sysml/1.6/SysML#//portsandflows http://www.eclipse.org/papyrus/sysml/1.6/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.6/SysML#//requirements">
+  <uml:Model xmi:id="_xshEcKaqEfCE3dmP7-jaFg" name="2.1 Cooling System">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xthxEKaqEfCE3dmP7-jaFg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xtkNUKaqEfCE3dmP7-jaFg">
+      <importedPackage xmi:type="uml:Package" href="pathmap://SysML16_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_05QtQKaqEfCE3dmP7-jaFg" name="1 Subsystem Requirements">
+      <packagedElement xmi:type="uml:Package" xmi:id="_dMVvgKarEfCE3dmP7-jaFg" name="req">
+        <packagedElement xmi:type="uml:Class" xmi:id="_mqzOAKarEfCE3dmP7-jaFg" name="SSR-1 - SRS for Cooling System">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_j8lUQKarEfCE3dmP7-jaFg" name="Cooling Approach">
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_osdHQKasEfCE3dmP7-jaFg" name="Air for Cooling"/>
+          </nestedClassifier>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_nRYs4KarEfCE3dmP7-jaFg" name="Max Energy Consumption Cooling"/>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_nXD3EKarEfCE3dmP7-jaFg" name="Cooling System Working States">
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_l8v1MKarEfCE3dmP7-jaFg" name="Internal Communication"/>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_m82AQKarEfCE3dmP7-jaFg" name="Initialization"/>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_llwRgKarEfCE3dmP7-jaFg" name="Idling"/>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_m2h84KarEfCE3dmP7-jaFg" name="Operating"/>
+          </nestedClassifier>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_y7_WAKavEfCE3dmP7-jaFg" name="DeriveReqt2" client="_osdHQKasEfCE3dmP7-jaFg">
+          <supplier xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_KA59AKEnEfCLgaCZpR7_rA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_0wOTwKavEfCE3dmP7-jaFg" name="DeriveReqt3" client="_m82AQKarEfCE3dmP7-jaFg">
+          <supplier xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_KEL6gKEnEfCLgaCZpR7_rA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_01ZusKavEfCE3dmP7-jaFg" name="DeriveReqt4" client="_llwRgKarEfCE3dmP7-jaFg">
+          <supplier xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_KEL6gKEnEfCLgaCZpR7_rA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_07JKUKavEfCE3dmP7-jaFg" name="DeriveReqt5" client="_m2h84KarEfCE3dmP7-jaFg">
+          <supplier xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_KEL6gKEnEfCLgaCZpR7_rA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_2_SzYKavEfCE3dmP7-jaFg" name="DeriveReqt6" client="_nRYs4KarEfCE3dmP7-jaFg">
+          <supplier xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_KIsAAKEnEfCLgaCZpR7_rA"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_dQtx0KauEfCE3dmP7-jaFg" name="5 Traceability"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_3QS_oKa2EfCE3dmP7-jaFg" name="2 Subsystem Structure">
+      <packagedElement xmi:type="uml:Package" xmi:id="_8DGnUKa2EfCE3dmP7-jaFg" name="1 Logical interfaces">
+        <packagedElement xmi:type="uml:Class" xmi:id="_jh948LEsEfCpSctV9dRBCA" name="RefrigerantExchange">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jh948bEsEfCpSctV9dRBCA" name="r" visibility="public" type="_C_FAELEtEfCpSctV9dRBCA">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KvY6sLEtEfCpSctV9dRBCA" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_8J0TUKa2EfCE3dmP7-jaFg" name="2 Exchange Items">
+        <packagedElement xmi:type="uml:Class" xmi:id="_C_FAELEtEfCpSctV9dRBCA" name="Refrigerant"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_pS118LEtEfCpSctV9dRBCA" name="LPLTG">
+          <generalization xmi:type="uml:Generalization" xmi:id="_yDXQYLEtEfCpSctV9dRBCA" general="_C_FAELEtEfCpSctV9dRBCA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_z8vM0LEtEfCpSctV9dRBCA" name="HPHTG">
+          <generalization xmi:type="uml:Generalization" xmi:id="_z8vM0bEtEfCpSctV9dRBCA" general="_C_FAELEtEfCpSctV9dRBCA"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_Gini0LEuEfCpSctV9dRBCA" general="_C_FAELEtEfCpSctV9dRBCA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3ZbWILEtEfCpSctV9dRBCA" name="LPLTG">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3ZbWIbEtEfCpSctV9dRBCA" general="_C_FAELEtEfCpSctV9dRBCA"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_JwKc4LEuEfCpSctV9dRBCA" general="_C_FAELEtEfCpSctV9dRBCA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_52VdcLEtEfCpSctV9dRBCA" name="LPLTL">
+          <generalization xmi:type="uml:Generalization" xmi:id="_52VdcbEtEfCpSctV9dRBCA" general="_C_FAELEtEfCpSctV9dRBCA"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_8NFpwKa2EfCE3dmP7-jaFg" name="3 Logical Components"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_x70UYLEhEfCpSctV9dRBCA" name="Cooling System Architecture">
+        <generalization xmi:type="uml:Generalization" xmi:id="_gJcCcLEiEfCpSctV9dRBCA">
+          <general xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_VYizUKa8EfCE3dmP7-jaFg"/>
+        </generalization>
+        <generalization xmi:type="uml:Generalization" xmi:id="_UoNSkLEwEfCpSctV9dRBCA">
+          <general xmi:type="uml:Class" href="../../../car/VehicleCCU_Problem.uml#_mg4lkJ9vEfC34NGOgxXT3w"/>
+        </generalization>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_Jy9vsLEiEfCpSctV9dRBCA" name="p1" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_WgS2kKxDEfCSHLhqzbnJkg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_J4kocLEiEfCpSctV9dRBCA" name="p3" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_RzbNEKxqEfCh1-lDY6qTMA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_KBIukLEiEfCpSctV9dRBCA" name="p4" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_y6WqUKxtEfCh1-lDY6qTMA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_KMLg8LEiEfCpSctV9dRBCA" name="p2" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_-DiXUKxDEfCSHLhqzbnJkg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_z8YzErEjEfCpSctV9dRBCA" name="compressor" type="_iZSIsLEjEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z8ZaILEjEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z8ZaIbEjEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0WJW4rEjEfCpSctV9dRBCA" name="evaporator" type="_jsTPwLEjEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0WJW47EjEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0WJW5LEjEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0wfJgrEjEfCpSctV9dRBCA" name="condenser" type="_jmzEsLEjEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0wfJg7EjEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0wfwkLEjEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_131zIrEjEfCpSctV9dRBCA" name="metering device" type="_jwoWILEjEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_131zI7EjEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_132aMLEjEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2Oib47EjEfCpSctV9dRBCA" name="receiver dryer" type="_jx8kwLEjEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2OjC8LEjEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2OjC8bEjEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_l03CQ7EkEfCpSctV9dRBCA" name="receiver dryer" type="_jx8kwLEjEfCpSctV9dRBCA" aggregation="composite" association="_l03CQLEkEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l03pULEkEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l03pUbEkEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mWRGMbEkEfCpSctV9dRBCA" name="compressor" type="_iZSIsLEjEfCpSctV9dRBCA" aggregation="composite" association="_mWPRALEkEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mWRGMrEkEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mWRGM7EkEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_uED4U7EkEfCpSctV9dRBCA" name="condenser" type="_jmzEsLEjEfCpSctV9dRBCA" aggregation="composite" association="_uED4ULEkEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uED4VLEkEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uEEfYLEkEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_yDm3ErEkEfCpSctV9dRBCA" name="evaporator" type="_jsTPwLEjEfCpSctV9dRBCA" aggregation="composite" association="_yDmQALEkEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yDm3E7EkEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yDm3FLEkEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3TifobEkEfCpSctV9dRBCA" name="metering device" type="_jwoWILEjEfCpSctV9dRBCA" aggregation="composite" association="_3Th4kLEkEfCpSctV9dRBCA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3TiforEkEfCpSctV9dRBCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3Tifo7EkEfCpSctV9dRBCA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4cEjELEmEfCpSctV9dRBCA" name="Property16" type="_iZSIsLEjEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TM9LoLEnEfCpSctV9dRBCA" name="Property17" type="_jmzEsLEjEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_V9mHQLEnEfCpSctV9dRBCA" name="Property18" type="_jsTPwLEjEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YDvUYLEnEfCpSctV9dRBCA" name="Property19" type="_jwoWILEjEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_aaLAQLEnEfCpSctV9dRBCA" name="Property20" type="_jx8kwLEjEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_gCFrALEnEfCpSctV9dRBCA" name="p2" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_-DiXUKxDEfCSHLhqzbnJkg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_tyMk4LEnEfCpSctV9dRBCA" name="p1" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_WgS2kKxDEfCSHLhqzbnJkg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_qmRmALEoEfCpSctV9dRBCA" name="p5" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_Dhd4QLEpEfCpSctV9dRBCA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_szJtQLEoEfCpSctV9dRBCA" name="p6" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_FRnAMLEpEfCpSctV9dRBCA"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_f2QLQLEjEfCpSctV9dRBCA"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_iZSIsLEjEfCpSctV9dRBCA" name="Compressor">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_dNnQ4LEqEfCpSctV9dRBCA" name="p1" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_WgS2kKxDEfCSHLhqzbnJkg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_aHpBoLEuEfCpSctV9dRBCA" name="p10" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_Qzcc8LEvEfCpSctV9dRBCA" name="p2" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_jmzEsLEjEfCpSctV9dRBCA" name="Condenser">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_kYMBMLEqEfCpSctV9dRBCA" name="p5" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_Dhd4QLEpEfCpSctV9dRBCA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_yphcALEuEfCpSctV9dRBCA" name="p7" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_MeU20LEvEfCpSctV9dRBCA" name="p2" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_jsTPwLEjEfCpSctV9dRBCA" name="Evaporator">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_eGpxsLEqEfCpSctV9dRBCA" name="p2" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_-DiXUKxDEfCSHLhqzbnJkg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_jwS98LEuEfCpSctV9dRBCA" name="p7" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_HYHyALEvEfCpSctV9dRBCA" name="p9" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_jwoWILEjEfCpSctV9dRBCA" name="Metering Device">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_nqBBgLEuEfCpSctV9dRBCA" name="p8" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="__CFUILEuEfCpSctV9dRBCA" name="p9" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_jx8kwLEjEfCpSctV9dRBCA" name="Receiver Dryer">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_eul7cLEqEfCpSctV9dRBCA" name="p6" aggregation="composite">
+          <type xmi:type="uml:Class" href="VehicleCCU_Solution.uml#_FRnAMLEpEfCpSctV9dRBCA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_q8YxMLEuEfCpSctV9dRBCA" name="p7" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_tVv1QLEuEfCpSctV9dRBCA" name="p8" type="_jh948LEsEfCpSctV9dRBCA" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_l03CQLEkEfCpSctV9dRBCA" memberEnd="_l03CQ7EkEfCpSctV9dRBCA _l03pUrEkEfCpSctV9dRBCA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_l03CQbEkEfCpSctV9dRBCA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_l03CQrEkEfCpSctV9dRBCA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_l03pUrEkEfCpSctV9dRBCA" name="cooling system architecture" type="_x70UYLEhEfCpSctV9dRBCA" association="_l03CQLEkEfCpSctV9dRBCA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_mWPRALEkEfCpSctV9dRBCA" memberEnd="_mWRGMbEkEfCpSctV9dRBCA _mWRGNLEkEfCpSctV9dRBCA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mWP4ELEkEfCpSctV9dRBCA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mWRGMLEkEfCpSctV9dRBCA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_mWRGNLEkEfCpSctV9dRBCA" name="cooling system architecture" type="_x70UYLEhEfCpSctV9dRBCA" association="_mWPRALEkEfCpSctV9dRBCA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_uED4ULEkEfCpSctV9dRBCA" memberEnd="_uED4U7EkEfCpSctV9dRBCA _uEEfYbEkEfCpSctV9dRBCA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uED4UbEkEfCpSctV9dRBCA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uED4UrEkEfCpSctV9dRBCA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_uEEfYbEkEfCpSctV9dRBCA" name="cooling system architecture" type="_x70UYLEhEfCpSctV9dRBCA" association="_uED4ULEkEfCpSctV9dRBCA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_yDmQALEkEfCpSctV9dRBCA" memberEnd="_yDm3ErEkEfCpSctV9dRBCA _yDm3FbEkEfCpSctV9dRBCA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yDm3ELEkEfCpSctV9dRBCA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yDm3EbEkEfCpSctV9dRBCA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_yDm3FbEkEfCpSctV9dRBCA" name="cooling system architecture" type="_x70UYLEhEfCpSctV9dRBCA" association="_yDmQALEkEfCpSctV9dRBCA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_3Th4kLEkEfCpSctV9dRBCA" memberEnd="_3TifobEkEfCpSctV9dRBCA _3TifpLEkEfCpSctV9dRBCA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3Th4kbEkEfCpSctV9dRBCA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3TifoLEkEfCpSctV9dRBCA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_3TifpLEkEfCpSctV9dRBCA" name="cooling system architecture" type="_x70UYLEhEfCpSctV9dRBCA" association="_3Th4kLEkEfCpSctV9dRBCA"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xsvG4KaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xsvG4aaqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKAKaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKAaaqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Activities"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKAqaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKA6aqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Allocations"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKBKaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKBaaqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Blocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKBqaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKB6aqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//constraintblocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ConstraintBlocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKCKaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKCaaqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//deprecatedelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_DeprecatedElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKCqaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKC6aqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ModelElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKDKaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKDaaqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//portsandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Ports_u0026Flows"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKDqaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKD6aqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Requirements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xthKEKaqEfCE3dmP7-jaFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xthKEaaqEfCE3dmP7-jaFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Requirements:Requirement xmi:id="_j8miYKarEfCE3dmP7-jaFg" base_NamedElement="_j8lUQKarEfCE3dmP7-jaFg" id="SSR-1.1" text="The Cooling System shall be able to compress, condense, and evaporate theThe Cooling System shall be able to compress, condense, and evaporate the refrigerant." base_Class="_j8lUQKarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_llxfsqarEfCE3dmP7-jaFg" base_NamedElement="_llwRgKarEfCE3dmP7-jaFg" text="The Cooling System shall go to the Idling state either after the successful initialization or when the CP System requires it to stop cooling." base_Class="_llwRgKarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_l8xDZKarEfCE3dmP7-jaFg" base_NamedElement="_l8v1MKarEfCE3dmP7-jaFg" text="The Cooling System shall get control signals from the Central Processing (CP) System send back the response." base_Class="_l8v1MKarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_mq0cIKarEfCE3dmP7-jaFg" base_NamedElement="_mqzOAKarEfCE3dmP7-jaFg" id="SSR-1" base_Class="_mqzOAKarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_m2jLAKarEfCE3dmP7-jaFg" base_NamedElement="_m2h84KarEfCE3dmP7-jaFg" text="While working the Cooling System shall cool down the cabin air until the CP System requires to stop." base_Class="_m2h84KarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_m83OcqarEfCE3dmP7-jaFg" base_NamedElement="_m82AQKarEfCE3dmP7-jaFg" text="The Cooling System shall be initialized by the CP System. If the initialization succeeds, the Cooling System shall transit to the Idling state and wait there for the signal to start cooling." base_Class="_m82AQKarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_nRZ7EqarEfCE3dmP7-jaFg" base_NamedElement="_nRYs4KarEfCE3dmP7-jaFg" text="The Cooling System shall consume maximum 1.2 kWh." base_Class="_nRYs4KarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_nXFFRKarEfCE3dmP7-jaFg" base_NamedElement="_nXD3EKarEfCE3dmP7-jaFg" id="SSR-1.1" text="The main working states of the Cooling System shall be Off and On. Being in the On state, the Cooling System shall visit the Initializing, Idling, and Operating sub-states." base_Class="_nXD3EKarEfCE3dmP7-jaFg"/>
+  <Requirements:Requirement xmi:id="_osfjhaasEfCE3dmP7-jaFg" base_NamedElement="_osdHQKasEfCE3dmP7-jaFg" text="The Cooling System shall be able to draw the air out of the cabin and blow back the cooled air." base_Class="_osdHQKasEfCE3dmP7-jaFg"/>
+  <Requirements:DeriveReqt xmi:id="_y8ByQKavEfCE3dmP7-jaFg" base_DirectedRelationship="_y7_WAKavEfCE3dmP7-jaFg" base_Abstraction="_y7_WAKavEfCE3dmP7-jaFg"/>
+  <Requirements:DeriveReqt xmi:id="_0wO60KavEfCE3dmP7-jaFg" base_DirectedRelationship="_0wOTwKavEfCE3dmP7-jaFg" base_Abstraction="_0wOTwKavEfCE3dmP7-jaFg"/>
+  <Requirements:DeriveReqt xmi:id="_01a80KavEfCE3dmP7-jaFg" base_DirectedRelationship="_01ZusKavEfCE3dmP7-jaFg" base_Abstraction="_01ZusKavEfCE3dmP7-jaFg"/>
+  <Requirements:DeriveReqt xmi:id="_07K_gKavEfCE3dmP7-jaFg" base_DirectedRelationship="_07JKUKavEfCE3dmP7-jaFg" base_Abstraction="_07JKUKavEfCE3dmP7-jaFg"/>
+  <Requirements:DeriveReqt xmi:id="_2_UBgKavEfCE3dmP7-jaFg" base_DirectedRelationship="_2_SzYKavEfCE3dmP7-jaFg" base_Abstraction="_2_SzYKavEfCE3dmP7-jaFg"/>
+  <Blocks:Block xmi:id="_x77CELEhEfCpSctV9dRBCA" base_Class="_x70UYLEhEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_Jy-91LEiEfCpSctV9dRBCA" base_Port="_Jy9vsLEiEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_J4mdoLEiEfCpSctV9dRBCA" base_Port="_J4kocLEiEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_KBJVpLEiEfCpSctV9dRBCA" base_Port="_KBIukLEiEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_KMMvFLEiEfCpSctV9dRBCA" base_Port="_KMLg8LEiEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_iZVMALEjEfCpSctV9dRBCA" base_Class="_iZSIsLEjEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_jmzrwLEjEfCpSctV9dRBCA" base_Class="_jmzEsLEjEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_jsT20LEjEfCpSctV9dRBCA" base_Class="_jsTPwLEjEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_jwo9MLEjEfCpSctV9dRBCA" base_Class="_jwoWILEjEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_jx8kwbEjEfCpSctV9dRBCA" base_Class="_jx8kwLEjEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_qmV3cLEoEfCpSctV9dRBCA" base_Port="_qmRmALEoEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_szN-sLEoEfCpSctV9dRBCA" base_Port="_szJtQLEoEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_dNqUMLEqEfCpSctV9dRBCA" base_Port="_dNnQ4LEqEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_eGsN8LEqEfCpSctV9dRBCA" base_Port="_eGpxsLEqEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_eunwoLEqEfCpSctV9dRBCA" base_Port="_eul7cLEqEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_kYOdcLEqEfCpSctV9dRBCA" base_Port="_kYMBMLEqEfCpSctV9dRBCA"/>
+  <PortsAndFlows:InterfaceBlock xmi:id="_jh-gALEsEfCpSctV9dRBCA" base_Class="_jh948LEsEfCpSctV9dRBCA"/>
+  <PortsAndFlows:FlowProperty xmi:id="_jiAVMLEsEfCpSctV9dRBCA" base_Property="_jh948bEsEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_C_GOMLEtEfCpSctV9dRBCA" base_Class="_C_FAELEtEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_pS118bEtEfCpSctV9dRBCA" base_Class="_pS118LEtEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_z8xCErEtEfCpSctV9dRBCA" base_Class="_z8vM0LEtEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_3ZckVLEtEfCpSctV9dRBCA" base_Class="_3ZbWILEtEfCpSctV9dRBCA"/>
+  <Blocks:Block xmi:id="_52WrorEtEfCpSctV9dRBCA" base_Class="_52VdcLEtEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_aHrd4LEuEfCpSctV9dRBCA" base_Port="_aHpBoLEuEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_jwUME7EuEfCpSctV9dRBCA" base_Port="_jwS98LEuEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_nqCPoLEuEfCpSctV9dRBCA" base_Port="_nqBBgLEuEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_q8amYLEuEfCpSctV9dRBCA" base_Port="_q8YxMLEuEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_tVxDYLEuEfCpSctV9dRBCA" base_Port="_tVv1QLEuEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_ypjRMLEuEfCpSctV9dRBCA" base_Port="_yphcALEuEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="__CGiQLEuEfCpSctV9dRBCA" base_Port="__CFUILEuEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_HYLcYLEvEfCpSctV9dRBCA" base_Port="_HYHyALEvEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_MeWE8LEvEfCpSctV9dRBCA" base_Port="_MeU20LEvEfCpSctV9dRBCA"/>
+  <PortsAndFlows:ProxyPort xmi:id="_QzeSILEvEfCpSctV9dRBCA" base_Port="_Qzcc8LEvEfCpSctV9dRBCA"/>
+</xmi:XMI>

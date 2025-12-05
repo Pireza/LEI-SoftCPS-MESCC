@@ -1,0 +1,27 @@
+[comment encoding = UTF-8 /]
+[module generateUML('http://www.example.org/dslmealymachine')]
+
+
+[template public generateUML(aMealyMachine : MealyMachine)]
+[comment @main/]
+[file (aMealyMachine.fileName(), false, 'UTF-8')]
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state [aMealyMachine.machineName()/] {
+
+	['[' + '*' + ']'/] ---> [aMealyMachine.getInitialState().stateName() /]
+
+	[for (transition : Transition | aMealyMachine.transition) separator('\n')]
+	[transition.sourceState.stateName() /] ---> [transition.targetState.stateName()/] : **Event**: [transition.event.name/]\n**Output**: [transition.output.name/]		
+	[/for]
+
+}
+@enduml
+[/file]
+[/template]
+
+[query protected machineName(m : MealyMachine) : String = m.name.replaceAll(' ', '').replaceAll('-', '')/]
+[query protected stateName(s : State) : String = s.name.replaceAll(' ', '').replaceAll('-', '') /]
+[query protected getInitialState(m: MealyMachine): State = m.initialnode.initialState /]
+[query protected fileName(m : MealyMachine) : String = m.name.replaceAll(' ', '').replaceAll('-', '') + '.puml' /]

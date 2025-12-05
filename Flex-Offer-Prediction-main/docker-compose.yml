@@ -1,0 +1,33 @@
+services:
+  backend:
+    image: pireza/flex-offer-prediction:0.0.1
+    environment:
+      RABBIT_USERNAME: "${RABBIT_USERNAME}"
+      RABBIT_PASSWORD: "${RABBIT_PASSWORD}"
+      RABBIT_HOST: "${RABBIT_HOST}"
+      RABBIT_PORT: "${RABBIT_PORT}"
+      RABBIT_EXCHANGE: "${RABBIT_EXCHANGE}"
+      MONGO_HOST: "${MONGO_HOST}"
+      MONGO_PORT: "${MONGO_PORT}"
+      MONGO_USERNAME: "${MONGO_USERNAME}"
+      MONGO_PASSWORD: "${MONGO_PASSWORD}"
+      MONGO_AUTH_SRC: "${MONGO_AUTH_SRC}"
+      MONGO_DB_NAME: "${MONGO_DB_NAME}"
+      MONGO_COLLECTION_NAME: "${MONGO_COLLECTION_NAME}"
+      HOLIDAYS_CONFIGURATION_PATH: "${HOLIDAYS_CONFIGURATION_PATH}"
+      HOLIDAY_COUNTRY_KEY: "${HOLIDAY_COUNTRY_KEY}"
+      HOLIDAY_REGION_KEY: "${HOLIDAY_REGION_KEY}"
+      HOLIDAY_API: "${HOLIDAY_API}"
+      HOLIDAY_START_KEY: "${HOLIDAY_START_KEY}"
+      API_DATE_KEY: "${API_DATE_KEY}"
+      API_DATE_FORMAT: "${API_DATE_FORMAT}"
+      HOLIDAYS_KEY: "${HOLIDAYS_KEY}"
+      DUMP_PATH: "${DUMP_PATH}"
+      LISTENING_QUEUES: "${LISTENING_QUEUES}"
+      USERS : "${USERS}"
+    networks:
+      - opeva_network
+
+networks:
+  opeva_network:
+    external: true

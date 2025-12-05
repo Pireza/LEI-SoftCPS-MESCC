@@ -1,0 +1,13 @@
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state LightSwitch {
+
+	[*] ---> LightOff
+
+	LightOn ---> LightOff : **Event**: Off is pressed\n**Output**: Dark		
+
+	LightOff ---> LightOn : **Event**: On is pressed\n**Output**: Light		
+
+}
+@enduml

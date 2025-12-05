@@ -1,0 +1,27 @@
+name: Build and Deploy .NET Application
+
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  build:
+    runs-on: self-hosted 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Test Server
+        run: touch ./test.txt
+        
+      - name: Install dependencies
+        run: PATH=$PATH:$HOME/.dotnet dotnet restore ./TodoApi
+
+      - name: Build the application
+        run: PATH=$PATH:$HOME/.dotnet dotnet build ./TodoApi --configuration Release
+
+      - name: Run tests
+        run: PATH=$PATH:$HOME/.dotnet dotnet test ./TodoApi

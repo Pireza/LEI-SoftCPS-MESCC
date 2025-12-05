@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Allocations="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Allocations" xmlns:Blocks="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks" xmlns:PortsAndFlows="http://www.eclipse.org/papyrus/sysml/1.6/SysML/PortsAndFlows" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Allocations http://www.eclipse.org/papyrus/sysml/1.6/SysML#//allocations http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks http://www.eclipse.org/papyrus/sysml/1.6/SysML#//blocks http://www.eclipse.org/papyrus/sysml/1.6/SysML/PortsAndFlows http://www.eclipse.org/papyrus/sysml/1.6/SysML#//portsandflows http://www.eclipse.org/papyrus/sysml/1.6/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.6/SysML#//requirements">
+  <uml:Model xmi:id="_qCzQ0J41EfCEdp52BaNN8w" name="VehicleCCU_Problem">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_qEB_4Z41EfCEdp52BaNN8w">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_qEFqQJ41EfCEdp52BaNN8w">
+      <importedPackage xmi:type="uml:Package" href="pathmap://SysML16_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_38jZcJ42EfCEdp52BaNN8w" name="1 Problem Domain">
+      <packagedElement xmi:type="uml:Package" xmi:id="_7Vcn4J42EfCEdp52BaNN8w" name="1 Black Box">
+        <packagedElement xmi:type="uml:Package" xmi:id="_-Q7hkJ42EfCEdp52BaNN8w" name="1 Stakeholder Needs">
+          <packagedElement xmi:type="uml:Class" xmi:id="_4rNgsJ6uEfCQUJc3dSHiMw" name="Stakeholder Needs">
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_1w7g4J6uEfCQUJc3dSHiMw" name="User Needs">
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_tCgNoJ6tEfCQUJc3dSHiMw" name="F: Ambient Temperature"/>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_JCOn4J6uEfCQUJc3dSHiMw" name="F: Comfortable Temperature"/>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_JTjBYJ6uEfCQUJc3dSHiMw" name="F: Desired Temperature"/>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_Lt3HsJ6uEfCQUJc3dSHiMw" name="F: Heating &amp; Cooling"/>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_ML2EMJ6uEfCQUJc3dSHiMw" name="Q: Energy Consumption"/>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_MjiygJ6uEfCQUJc3dSHiMw" name="F: Manual Control"/>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_NKuHQJ6uEfCQUJc3dSHiMw" name="Q: Sound Level"/>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_8iWKUJ6uEfCQUJc3dSHiMw" name="Design Constraints">
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_Nc-U4J6uEfCQUJc3dSHiMw" name="Q: Total Mass"/>
+            </nestedClassifier>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_4C49oJ7IEfCGy8Hnx-4qKw" name="2 Use Cases">
+          <packagedElement xmi:type="uml:Association" xmi:id="_S4Kn0J-WEfC34NGOgxXT3w" memberEnd="_S4TKsJ-WEfC34NGOgxXT3w _S4TxwJ-WEfC34NGOgxXT3w">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_S4RVgJ-WEfC34NGOgxXT3w" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_S4R8kJ-WEfC34NGOgxXT3w" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_S4TKsJ-WEfC34NGOgxXT3w" name="vehicle occupant" type="_jn0AkJ7IEfCGy8Hnx-4qKw" association="_S4Kn0J-WEfC34NGOgxXT3w"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_S4TxwJ-WEfC34NGOgxXT3w" name="i want to see the ambient temperature on the screen or some other output device." type="_aNzOEJ-VEfC34NGOgxXT3w" association="_S4Kn0J-WEfC34NGOgxXT3w"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_ziv90J7JEfCGy8Hnx-4qKw" memberEnd="_ziwk4p7JEfCGy8Hnx-4qKw _ziwk457JEfCGy8Hnx-4qKw">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ziwk4J7JEfCGy8Hnx-4qKw" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ziwk4Z7JEfCGy8Hnx-4qKw" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_ziwk4p7JEfCGy8Hnx-4qKw" name="vehicle occupant" type="_jn0AkJ7IEfCGy8Hnx-4qKw" association="_ziv90J7JEfCGy8Hnx-4qKw"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_ziwk457JEfCGy8Hnx-4qKw" name="feel comfortable temperature" type="_ku8LQJ7JEfCGy8Hnx-4qKw" association="_ziv90J7JEfCGy8Hnx-4qKw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_T0lMwJ-WEfC34NGOgxXT3w" memberEnd="_T0npAp-WEfC34NGOgxXT3w _T0npA5-WEfC34NGOgxXT3w">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T0npAJ-WEfC34NGOgxXT3w" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T0npAZ-WEfC34NGOgxXT3w" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_T0npAp-WEfC34NGOgxXT3w" name="vehicle occupant" type="_jn0AkJ7IEfCGy8Hnx-4qKw" association="_T0lMwJ-WEfC34NGOgxXT3w"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_T0npA5-WEfC34NGOgxXT3w" name="i want to specify my desired temperature inside the cabin." type="_ac29wJ-VEfC34NGOgxXT3w" association="_T0lMwJ-WEfC34NGOgxXT3w"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_VqK1YJ-WEfC34NGOgxXT3w" memberEnd="_VqMqkZ-WEfC34NGOgxXT3w _VqMqkp-WEfC34NGOgxXT3w">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VqMDgJ-WEfC34NGOgxXT3w" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VqMqkJ-WEfC34NGOgxXT3w" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_VqMqkZ-WEfC34NGOgxXT3w" name="vehicle occupant" type="_jn0AkJ7IEfCGy8Hnx-4qKw" association="_VqK1YJ-WEfC34NGOgxXT3w"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_VqMqkp-WEfC34NGOgxXT3w" name="the unit must be able to heat and cool." type="_aqTj4J-VEfC34NGOgxXT3w" association="_VqK1YJ-WEfC34NGOgxXT3w"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_WlGzoJ-WEfC34NGOgxXT3w" memberEnd="_WlIBwp-WEfC34NGOgxXT3w _WlIBw5-WEfC34NGOgxXT3w">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WlIBwJ-WEfC34NGOgxXT3w" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WlIBwZ-WEfC34NGOgxXT3w" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_WlIBwp-WEfC34NGOgxXT3w" name="vehicle occupant" type="_jn0AkJ7IEfCGy8Hnx-4qKw" association="_WlGzoJ-WEfC34NGOgxXT3w"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_WlIBw5-WEfC34NGOgxXT3w" name="i want to be able to start and stop climate control by myself." type="_a1oDEJ-VEfC34NGOgxXT3w" association="_WlGzoJ-WEfC34NGOgxXT3w"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_ku8LQJ7JEfCGy8Hnx-4qKw" name="I want to feel a comfortable temperature when inside the cabin." classifierBehavior="_F86MAJ7KEfCGy8Hnx-4qKw" subject="_63ZiEJ7HEfCQUJc3dSHiMw">
+            <ownedBehavior xmi:type="uml:Activity" xmi:id="_F86MAJ7KEfCGy8Hnx-4qKw" name="Activity1" node="_Hpb68KBZEfCLNe4DNyFoEA _I4KX4KBZEfCLNe4DNyFoEA _JNu_QKBZEfCLNe4DNyFoEA _JPlZYKBZEfCLNe4DNyFoEA _JQpwYKBZEfCLNe4DNyFoEA _JR5GgKBZEfCLNe4DNyFoEA _JTg3IKBZEfCLNe4DNyFoEA _JVJO0KBZEfCLNe4DNyFoEA _JWCmsKBZEfCLNe4DNyFoEA _JXtaoKBZEfCLNe4DNyFoEA _VviS8KBZEfCLNe4DNyFoEA _Vxgo4KBZEfCLNe4DNyFoEA _VysUoKBZEfCLNe4DNyFoEA _ahrzUKBZEfCLNe4DNyFoEA _qq-LEKBZEfCLNe4DNyFoEA _1BbokKBZEfCLNe4DNyFoEA __glIAKBZEfCLNe4DNyFoEA _QJok8KBaEfCLNe4DNyFoEA _ylk0sKBaEfCLNe4DNyFoEA" group="_0SMEUKBWEfCLNe4DNyFoEA _1HRSMKBWEfCLNe4DNyFoEA _10AcYKBWEfCLNe4DNyFoEA">
+              <edge xmi:type="uml:ControlFlow" xmi:id="_KnnjUKBZEfCLNe4DNyFoEA" target="_I4KX4KBZEfCLNe4DNyFoEA" source="_Hpb68KBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_pTeMoKBZEfCLNe4DNyFoEA" target="_JNu_QKBZEfCLNe4DNyFoEA" source="_I4KX4KBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_vkuIQKBZEfCLNe4DNyFoEA" target="_qq-LEKBZEfCLNe4DNyFoEA" source="_JNu_QKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_wKkAQKBZEfCLNe4DNyFoEA" name="[OK]" target="_JPlZYKBZEfCLNe4DNyFoEA" source="_qq-LEKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_2Ej5gKBZEfCLNe4DNyFoEA" target="_1BbokKBZEfCLNe4DNyFoEA" source="_VysUoKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_2p2-8KBZEfCLNe4DNyFoEA" name="[Not OK]" target="_VysUoKBZEfCLNe4DNyFoEA" source="_JNu_QKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_A_YoUKBaEfCLNe4DNyFoEA" target="__glIAKBZEfCLNe4DNyFoEA" source="_JPlZYKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_B5Jh4KBaEfCLNe4DNyFoEA" target="_JQpwYKBZEfCLNe4DNyFoEA" source="__glIAKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_SXlDMKBaEfCLNe4DNyFoEA" name="Ambient temperature" target="_QJok8KBaEfCLNe4DNyFoEA" source="_HvXuYKBaEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_WgVoUKBaEfCLNe4DNyFoEA" name="Temperature" target="_S_HkUKBaEfCLNe4DNyFoEA" source="_QJok8KBaEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_XIWDgKBaEfCLNe4DNyFoEA" name="Temperature" target="_ThobgKBaEfCLNe4DNyFoEA" source="_QJok8KBaEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_uulVAKBaEfCLNe4DNyFoEA" name="Info" target="_pesvwKBaEfCLNe4DNyFoEA" source="_sLV8MKBaEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_0JcbMKBaEfCLNe4DNyFoEA" target="_ylk0sKBaEfCLNe4DNyFoEA" source="_JTg3IKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_1aqygKBaEfCLNe4DNyFoEA" name="[Comfortable]" target="_Vxgo4KBZEfCLNe4DNyFoEA" source="_ylk0sKBaEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_CNchcKBbEfCLNe4DNyFoEA" target="_ahrzUKBZEfCLNe4DNyFoEA" source="_Vxgo4KBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_DUH1oKBbEfCLNe4DNyFoEA" target="_VysUoKBZEfCLNe4DNyFoEA" source="_ahrzUKBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_GgUE0KBbEfCLNe4DNyFoEA" name="[Not comfortable]" target="_JVJO0KBZEfCLNe4DNyFoEA" source="_ylk0sKBaEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_TVF-4KBbEfCLNe4DNyFoEA" name="Desired temperature" target="_SRRxcKBbEfCLNe4DNyFoEA" source="_RK6mUKBbEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_WWMYYKBbEfCLNe4DNyFoEA" target="_JWCmsKBZEfCLNe4DNyFoEA" source="_JVJO0KBZEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_ouY3sKBbEfCLNe4DNyFoEA" name="Air" target="_hupeYKBbEfCLNe4DNyFoEA" source="_mYORkKBbEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_rFB-8KBbEfCLNe4DNyFoEA" name="Comfortable air" target="_tHY4QKBbEfCLNe4DNyFoEA" source="_kGL9gKBbEfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_4SMj0KBbEfCLNe4DNyFoEA" target="__glIAKBZEfCLNe4DNyFoEA" source="_JXtaoKBZEfCLNe4DNyFoEA"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_0SMEUKBWEfCLNe4DNyFoEA" name="Vehicle Occupant" node="_Hpb68KBZEfCLNe4DNyFoEA _ylk0sKBaEfCLNe4DNyFoEA"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_1HRSMKBWEfCLNe4DNyFoEA" name="Climate Control Unit" node="_qq-LEKBZEfCLNe4DNyFoEA _1BbokKBZEfCLNe4DNyFoEA __glIAKBZEfCLNe4DNyFoEA _QJok8KBaEfCLNe4DNyFoEA"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_10AcYKBWEfCLNe4DNyFoEA" name="Cabin"/>
+              <node xmi:type="uml:InitialNode" xmi:id="_Hpb68KBZEfCLNe4DNyFoEA" name="" outgoing="_KnnjUKBZEfCLNe4DNyFoEA" inPartition="_0SMEUKBWEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_I4KX4KBZEfCLNe4DNyFoEA" name="Turn on climate control" incoming="_KnnjUKBZEfCLNe4DNyFoEA" outgoing="_pTeMoKBZEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JNu_QKBZEfCLNe4DNyFoEA" name="Check system" incoming="_pTeMoKBZEfCLNe4DNyFoEA" outgoing="_vkuIQKBZEfCLNe4DNyFoEA _2p2-8KBZEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JPlZYKBZEfCLNe4DNyFoEA" name="Start  climate control" incoming="_wKkAQKBZEfCLNe4DNyFoEA" outgoing="_A_YoUKBaEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JQpwYKBZEfCLNe4DNyFoEA" name="Measure temperature" incoming="_B5Jh4KBaEfCLNe4DNyFoEA">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_HvXuYKBaEfCLNe4DNyFoEA" name="" outgoing="_SXlDMKBaEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HvY8gKBaEfCLNe4DNyFoEA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JR5GgKBZEfCLNe4DNyFoEA" name="Display temperature">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_S_HkUKBaEfCLNe4DNyFoEA" name="" incoming="_WgVoUKBaEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_S_IycKBaEfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_sLV8MKBaEfCLNe4DNyFoEA" name="" outgoing="_uulVAKBaEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_sLXxYKBaEfCLNe4DNyFoEA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JTg3IKBZEfCLNe4DNyFoEA" name="Evaluate comfort" outgoing="_0JcbMKBaEfCLNe4DNyFoEA">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_pesvwKBaEfCLNe4DNyFoEA" name="" incoming="_uulVAKBaEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_peuk8KBaEfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JVJO0KBZEfCLNe4DNyFoEA" name="Set temperature" incoming="_GgUE0KBbEfCLNe4DNyFoEA" outgoing="_WWMYYKBbEfCLNe4DNyFoEA">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_RK6mUKBbEfCLNe4DNyFoEA" name="" outgoing="_TVF-4KBbEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_RK8bgKBbEfCLNe4DNyFoEA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JWCmsKBZEfCLNe4DNyFoEA" name="Provide air" incoming="_WWMYYKBbEfCLNe4DNyFoEA">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_mYORkKBbEfCLNe4DNyFoEA" name="" outgoing="_ouY3sKBbEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_mYQGwKBbEfCLNe4DNyFoEA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_JXtaoKBZEfCLNe4DNyFoEA" name="Get comfortable air" outgoing="_4SMj0KBbEfCLNe4DNyFoEA">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_tHY4QKBbEfCLNe4DNyFoEA" name="" incoming="_rFB-8KBbEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_tHaGYKBbEfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_VviS8KBZEfCLNe4DNyFoEA" name="Reach desired temperature">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_ThobgKBaEfCLNe4DNyFoEA" name="" incoming="_XIWDgKBaEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_ThqQsKBaEfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+                <inputValue xmi:type="uml:InputPin" xmi:id="_SRRxcKBbEfCLNe4DNyFoEA" name="" incoming="_TVF-4KBbEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_SRTmoKBbEfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+                <inputValue xmi:type="uml:InputPin" xmi:id="_hupeYKBbEfCLNe4DNyFoEA" name="" incoming="_ouY3sKBbEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_hurTkKBbEfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_kGL9gKBbEfCLNe4DNyFoEA" name="" outgoing="_rFB-8KBbEfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_kGOZwKBbEfCLNe4DNyFoEA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_Vxgo4KBZEfCLNe4DNyFoEA" name="Enjoy temperature" incoming="_1aqygKBaEfCLNe4DNyFoEA" outgoing="_CNchcKBbEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_VysUoKBZEfCLNe4DNyFoEA" name="Stop climate control" incoming="_2p2-8KBZEfCLNe4DNyFoEA _DUH1oKBbEfCLNe4DNyFoEA" outgoing="_2Ej5gKBZEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_ahrzUKBZEfCLNe4DNyFoEA" name="Turn off climate control" incoming="_CNchcKBbEfCLNe4DNyFoEA" outgoing="_DUH1oKBbEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_qq-LEKBZEfCLNe4DNyFoEA" name="" incoming="_vkuIQKBZEfCLNe4DNyFoEA" outgoing="_wKkAQKBZEfCLNe4DNyFoEA" inPartition="_1HRSMKBWEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:ActivityFinalNode" xmi:id="_1BbokKBZEfCLNe4DNyFoEA" name="" incoming="_2Ej5gKBZEfCLNe4DNyFoEA" inPartition="_1HRSMKBWEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:MergeNode" xmi:id="__glIAKBZEfCLNe4DNyFoEA" name="" incoming="_A_YoUKBaEfCLNe4DNyFoEA _4SMj0KBbEfCLNe4DNyFoEA" outgoing="_B5Jh4KBaEfCLNe4DNyFoEA" inPartition="_1HRSMKBWEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:ForkNode" xmi:id="_QJok8KBaEfCLNe4DNyFoEA" name="" incoming="_SXlDMKBaEfCLNe4DNyFoEA" outgoing="_WgVoUKBaEfCLNe4DNyFoEA _XIWDgKBaEfCLNe4DNyFoEA" inPartition="_1HRSMKBWEfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_ylk0sKBaEfCLNe4DNyFoEA" name="" incoming="_0JcbMKBaEfCLNe4DNyFoEA" outgoing="_1aqygKBaEfCLNe4DNyFoEA _GgUE0KBbEfCLNe4DNyFoEA" inPartition="_0SMEUKBWEfCLNe4DNyFoEA"/>
+            </ownedBehavior>
+          </packagedElement>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_aNzOEJ-VEfC34NGOgxXT3w" name="I want to see the ambient temperature on the screen or some other output device." classifierBehavior="_lwXncJ-XEfC34NGOgxXT3w" subject="_63ZiEJ7HEfCQUJc3dSHiMw">
+            <ownedBehavior xmi:type="uml:Activity" xmi:id="_lwXncJ-XEfC34NGOgxXT3w" name="Activity1" node="_lEIKgJ-tEfCm_rJDPbG21w _lJwRYJ-tEfCm_rJDPbG21w _li80gJ-tEfCm_rJDPbG21w _lk1q4J-tEfCm_rJDPbG21w _lmnMgJ-tEfCm_rJDPbG21w _nb_ZwJ-tEfCm_rJDPbG21w _3I5M8J-sEfCm_rJDPbG21w _J5MNwJ-uEfCm_rJDPbG21w _5C6XsJ-uEfCm_rJDPbG21w _PVoL0J-vEfCm_rJDPbG21w _TFIuAJ-wEfCm_rJDPbG21w _EKAEEJ-zEfCm_rJDPbG21w _fNpQkJ-zEfCm_rJDPbG21w _EO8ZAJ-0EfCm_rJDPbG21w _gnXnIJ-0EfCm_rJDPbG21w _5QqREJ-0EfCm_rJDPbG21w" group="_6m_7QJ-bEfC34NGOgxXT3w _AVz4MJ-cEfC34NGOgxXT3w _IN2ygJ-cEfC34NGOgxXT3w _Tn2UIJ-dEfC34NGOgxXT3w">
+              <edge xmi:type="uml:ControlFlow" xmi:id="_PVKHMJ-uEfCm_rJDPbG21w" target="_3I5M8J-sEfCm_rJDPbG21w" source="_J5MNwJ-uEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_XLGIsJ-uEfCm_rJDPbG21w" target="_lEIKgJ-tEfCm_rJDPbG21w" source="_3I5M8J-sEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_L9lR8J-vEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_5C6XsJ-uEfCm_rJDPbG21w" source="_lEIKgJ-tEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_UlPEQJ-vEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_PVoL0J-vEfCm_rJDPbG21w" source="_nb_ZwJ-tEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_WNxvYJ-vEfCm_rJDPbG21w" name="[Not OK]" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_nb_ZwJ-tEfCm_rJDPbG21w" source="_5C6XsJ-uEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_hLR-wJ-vEfCm_rJDPbG21w" name="[OK]" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_lJwRYJ-tEfCm_rJDPbG21w" source="_5C6XsJ-uEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_YUQeQJ-wEfCm_rJDPbG21w" name="Temperature" target="_TFIuAJ-wEfCm_rJDPbG21w" source="_Gr78sJ-wEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_JldnMJ-zEfCm_rJDPbG21w" name="Temperature" inPartition="_Tn2UIJ-dEfC34NGOgxXT3w" target="_EKAEEJ-zEfCm_rJDPbG21w" source="_TFIuAJ-wEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_MeseIJ-zEfCm_rJDPbG21w" name="[Only display is from VCCU]" target="_C9pQkJ-xEfCm_rJDPbG21w" source="_EKAEEJ-zEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_M_F1cJ-zEfCm_rJDPbG21w" name="[Display device exists]" target="_GZN_kJ-xEfCm_rJDPbG21w" source="_EKAEEJ-zEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_hVhjEJ-zEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_fNpQkJ-zEfCm_rJDPbG21w" source="_lJwRYJ-tEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_jDNz8J-zEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_li80gJ-tEfCm_rJDPbG21w" source="_fNpQkJ-zEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_GKtiIJ-0EfCm_rJDPbG21w" target="_EO8ZAJ-0EfCm_rJDPbG21w" source="_lk1q4J-tEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_knAFcJ-0EfCm_rJDPbG21w" inPartition="_IN2ygJ-cEfC34NGOgxXT3w" target="_gnXnIJ-0EfCm_rJDPbG21w" source="_lk1q4J-tEfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_nvbO8J-0EfCm_rJDPbG21w" name="[Continue]" target="_fNpQkJ-zEfCm_rJDPbG21w" source="_gnXnIJ-0EfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_74wUsJ-0EfCm_rJDPbG21w" target="_5QqREJ-0EfCm_rJDPbG21w" source="_gnXnIJ-0EfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="__UyWsJ-0EfCm_rJDPbG21w" name="[Continue]" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_fNpQkJ-zEfCm_rJDPbG21w" source="_EO8ZAJ-0EfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_HZHZgJ-1EfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w" target="_5QqREJ-0EfCm_rJDPbG21w" source="_EO8ZAJ-0EfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_KBBP4J-1EfCm_rJDPbG21w" target="_lmnMgJ-tEfCm_rJDPbG21w" source="_5QqREJ-0EfCm_rJDPbG21w"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_MmMiYJ-1EfCm_rJDPbG21w" target="_nb_ZwJ-tEfCm_rJDPbG21w" source="_lmnMgJ-tEfCm_rJDPbG21w"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_6m_7QJ-bEfC34NGOgxXT3w" name="Climate Control Unit" node="_li80gJ-tEfCm_rJDPbG21w _lJwRYJ-tEfCm_rJDPbG21w _lEIKgJ-tEfCm_rJDPbG21w _5C6XsJ-uEfCm_rJDPbG21w _PVoL0J-vEfCm_rJDPbG21w _nb_ZwJ-tEfCm_rJDPbG21w _Gr78sJ-wEfCm_rJDPbG21w _C9pQkJ-xEfCm_rJDPbG21w _fNpQkJ-zEfCm_rJDPbG21w _EO8ZAJ-0EfCm_rJDPbG21w _5QqREJ-0EfCm_rJDPbG21w" represents="_GfPH4J7IEfCQUJc3dSHiMw" edge="_L9lR8J-vEfCm_rJDPbG21w _UlPEQJ-vEfCm_rJDPbG21w _hLR-wJ-vEfCm_rJDPbG21w _hVhjEJ-zEfCm_rJDPbG21w _jDNz8J-zEfCm_rJDPbG21w __UyWsJ-0EfCm_rJDPbG21w _HZHZgJ-1EfCm_rJDPbG21w _WNxvYJ-vEfCm_rJDPbG21w"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_AVz4MJ-cEfC34NGOgxXT3w" name="Vehicle Occupant" node="_J5MNwJ-uEfCm_rJDPbG21w" represents="_jn0AkJ7IEfCGy8Hnx-4qKw"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_IN2ygJ-cEfC34NGOgxXT3w" name="Temperature Display Device" node="_C9pQkJ-xEfCm_rJDPbG21w _lk1q4J-tEfCm_rJDPbG21w _GZN_kJ-xEfCm_rJDPbG21w _gnXnIJ-0EfCm_rJDPbG21w" represents="_0dmUEJ-bEfC34NGOgxXT3w" edge="_knAFcJ-0EfCm_rJDPbG21w"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_Tn2UIJ-dEfC34NGOgxXT3w" name="Cabin" node="_TFIuAJ-wEfCm_rJDPbG21w _EKAEEJ-zEfCm_rJDPbG21w" represents="_B4dBkJ-aEfC34NGOgxXT3w" edge="_JldnMJ-zEfCm_rJDPbG21w"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_3I5M8J-sEfCm_rJDPbG21w" name="Turn on the Climate Control Unit" incoming="_PVKHMJ-uEfCm_rJDPbG21w" outgoing="_XLGIsJ-uEfCm_rJDPbG21w"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_lEIKgJ-tEfCm_rJDPbG21w" name="Check system" incoming="_XLGIsJ-uEfCm_rJDPbG21w" outgoing="_L9lR8J-vEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_lJwRYJ-tEfCm_rJDPbG21w" name="Climate Control Unit starts" incoming="_hLR-wJ-vEfCm_rJDPbG21w" outgoing="_hVhjEJ-zEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_li80gJ-tEfCm_rJDPbG21w" name="Measure Temperature" incoming="_jDNz8J-zEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_Gr78sJ-wEfCm_rJDPbG21w" name="" outgoing="_YUQeQJ-wEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_Gr-Y8J-wEfCm_rJDPbG21w" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_lk1q4J-tEfCm_rJDPbG21w" name="Display measured Temperature" outgoing="_GKtiIJ-0EfCm_rJDPbG21w _knAFcJ-0EfCm_rJDPbG21w" inPartition="_IN2ygJ-cEfC34NGOgxXT3w">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_C9pQkJ-xEfCm_rJDPbG21w" name="" incoming="_MeseIJ-zEfCm_rJDPbG21w" inPartition="_IN2ygJ-cEfC34NGOgxXT3w _6m_7QJ-bEfC34NGOgxXT3w">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_C9rFwJ-xEfCm_rJDPbG21w" value="1"/>
+                </inputValue>
+                <inputValue xmi:type="uml:InputPin" xmi:id="_GZN_kJ-xEfCm_rJDPbG21w" name="" incoming="_M_F1cJ-zEfCm_rJDPbG21w" inPartition="_IN2ygJ-cEfC34NGOgxXT3w">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_GZPNsJ-xEfCm_rJDPbG21w" value="1"/>
+                </inputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_lmnMgJ-tEfCm_rJDPbG21w" name="Turn off the Climate Control Unit" incoming="_KBBP4J-1EfCm_rJDPbG21w" outgoing="_MmMiYJ-1EfCm_rJDPbG21w"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_nb_ZwJ-tEfCm_rJDPbG21w" name="Climate Control Unit shuts down" incoming="_MmMiYJ-1EfCm_rJDPbG21w _WNxvYJ-vEfCm_rJDPbG21w" outgoing="_UlPEQJ-vEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:InitialNode" xmi:id="_J5MNwJ-uEfCm_rJDPbG21w" name="" outgoing="_PVKHMJ-uEfCm_rJDPbG21w" inPartition="_AVz4MJ-cEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_5C6XsJ-uEfCm_rJDPbG21w" name="" incoming="_L9lR8J-vEfCm_rJDPbG21w" outgoing="_WNxvYJ-vEfCm_rJDPbG21w _hLR-wJ-vEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:ActivityFinalNode" xmi:id="_PVoL0J-vEfCm_rJDPbG21w" name="" incoming="_UlPEQJ-vEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:ForkNode" xmi:id="_TFIuAJ-wEfCm_rJDPbG21w" name="" incoming="_YUQeQJ-wEfCm_rJDPbG21w" outgoing="_JldnMJ-zEfCm_rJDPbG21w" inPartition="_Tn2UIJ-dEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_EKAEEJ-zEfCm_rJDPbG21w" name="" incoming="_JldnMJ-zEfCm_rJDPbG21w" outgoing="_MeseIJ-zEfCm_rJDPbG21w _M_F1cJ-zEfCm_rJDPbG21w" inPartition="_Tn2UIJ-dEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_fNpQkJ-zEfCm_rJDPbG21w" name="" incoming="_hVhjEJ-zEfCm_rJDPbG21w _nvbO8J-0EfCm_rJDPbG21w __UyWsJ-0EfCm_rJDPbG21w" outgoing="_jDNz8J-zEfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_EO8ZAJ-0EfCm_rJDPbG21w" name="" incoming="_GKtiIJ-0EfCm_rJDPbG21w" outgoing="__UyWsJ-0EfCm_rJDPbG21w _HZHZgJ-1EfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_gnXnIJ-0EfCm_rJDPbG21w" name="" incoming="_knAFcJ-0EfCm_rJDPbG21w" outgoing="_nvbO8J-0EfCm_rJDPbG21w _74wUsJ-0EfCm_rJDPbG21w" inPartition="_IN2ygJ-cEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:MergeNode" xmi:id="_5QqREJ-0EfCm_rJDPbG21w" name="" incoming="_74wUsJ-0EfCm_rJDPbG21w _HZHZgJ-1EfCm_rJDPbG21w" outgoing="_KBBP4J-1EfCm_rJDPbG21w" inPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+            </ownedBehavior>
+          </packagedElement>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_ac29wJ-VEfC34NGOgxXT3w" name="I want to specify my desired temperature inside the cabin." classifierBehavior="_qCx30J-XEfC34NGOgxXT3w" subject="_63ZiEJ7HEfCQUJc3dSHiMw">
+            <ownedBehavior xmi:type="uml:Activity" xmi:id="_qCx30J-XEfC34NGOgxXT3w" name="Activity1" node="_Y7hbsKA2EfCLNe4DNyFoEA _l1xEkKA2EfCLNe4DNyFoEA _mkcIcKA2EfCLNe4DNyFoEA _mndAMKA2EfCLNe4DNyFoEA _nwLi0KA2EfCLNe4DNyFoEA _n3vjYKA2EfCLNe4DNyFoEA _n5X7EKA2EfCLNe4DNyFoEA _n60FgKA2EfCLNe4DNyFoEA _n8aA8KA2EfCLNe4DNyFoEA _B3wvsKA3EfCLNe4DNyFoEA _JP9sUKA3EfCLNe4DNyFoEA _ZrdOYKA3EfCLNe4DNyFoEA _DmHScKA4EfCLNe4DNyFoEA _Q_V9YKA4EfCLNe4DNyFoEA" group="_2a_YYJ-cEfC34NGOgxXT3w _4ODRcJ-cEfC34NGOgxXT3w _6Pm5gJ-cEfC34NGOgxXT3w">
+              <edge xmi:type="uml:ControlFlow" xmi:id="_1zwLQKA2EfCLNe4DNyFoEA" target="_l1xEkKA2EfCLNe4DNyFoEA" source="_Y7hbsKA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_6JElsKA2EfCLNe4DNyFoEA" target="_mkcIcKA2EfCLNe4DNyFoEA" source="_l1xEkKA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_DvMycKA3EfCLNe4DNyFoEA" target="_B3wvsKA3EfCLNe4DNyFoEA" source="_mkcIcKA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_F0UE0KA3EfCLNe4DNyFoEA" name="[OK]" target="_mndAMKA2EfCLNe4DNyFoEA" source="_B3wvsKA3EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_KdqOgKA3EfCLNe4DNyFoEA" name="[Not OK]" target="_n8aA8KA2EfCLNe4DNyFoEA" source="_B3wvsKA3EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_XFZLEKA3EfCLNe4DNyFoEA" target="_nwLi0KA2EfCLNe4DNyFoEA" source="_mndAMKA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_j4hfUKA3EfCLNe4DNyFoEA" name="Temperature" target="_ZrdOYKA3EfCLNe4DNyFoEA" source="_gl6fEKA3EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_5R2NUKA3EfCLNe4DNyFoEA" target="_n3vjYKA2EfCLNe4DNyFoEA" source="_nwLi0KA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_S-aSIKA4EfCLNe4DNyFoEA" target="_DmHScKA4EfCLNe4DNyFoEA" source="_n3vjYKA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_VUWOwKA4EfCLNe4DNyFoEA" target="_n5X7EKA2EfCLNe4DNyFoEA" source="_DmHScKA4EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_a7OXsKA4EfCLNe4DNyFoEA" target="_Q_V9YKA4EfCLNe4DNyFoEA" source="_n5X7EKA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_mC-IMKA4EfCLNe4DNyFoEA" name="[Continue]" inPartition="_6Pm5gJ-cEfC34NGOgxXT3w" target="_DmHScKA4EfCLNe4DNyFoEA" source="_Q_V9YKA4EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_s_gcgKA4EfCLNe4DNyFoEA" target="_n60FgKA2EfCLNe4DNyFoEA" source="_Q_V9YKA4EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_yQnJwKA4EfCLNe4DNyFoEA" target="_n8aA8KA2EfCLNe4DNyFoEA" source="_n60FgKA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_-xoaUKA4EfCLNe4DNyFoEA" target="_JP9sUKA3EfCLNe4DNyFoEA" source="_n8aA8KA2EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_Qe1b4KA5EfCLNe4DNyFoEA" name="Temperature" target="_L8sGYKA5EfCLNe4DNyFoEA" source="_ZrdOYKA3EfCLNe4DNyFoEA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_SDcCMKA5EfCLNe4DNyFoEA" name="Temperature" target="_OaLcgKA5EfCLNe4DNyFoEA" source="_ZrdOYKA3EfCLNe4DNyFoEA"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_2a_YYJ-cEfC34NGOgxXT3w" name="Cabin" node="_ZrdOYKA3EfCLNe4DNyFoEA" represents="_B4dBkJ-aEfC34NGOgxXT3w"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_4ODRcJ-cEfC34NGOgxXT3w" name="Vehicle Occupant" node="_Y7hbsKA2EfCLNe4DNyFoEA" represents="_jn0AkJ7IEfCGy8Hnx-4qKw"/>
+              <group xmi:type="uml:ActivityPartition" xmi:id="_6Pm5gJ-cEfC34NGOgxXT3w" name="Climate Control Unit" node="_B3wvsKA3EfCLNe4DNyFoEA _JP9sUKA3EfCLNe4DNyFoEA _DmHScKA4EfCLNe4DNyFoEA _Q_V9YKA4EfCLNe4DNyFoEA" represents="_GfPH4J7IEfCQUJc3dSHiMw" edge="_mC-IMKA4EfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:InitialNode" xmi:id="_Y7hbsKA2EfCLNe4DNyFoEA" name="" outgoing="_1zwLQKA2EfCLNe4DNyFoEA" inPartition="_4ODRcJ-cEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_l1xEkKA2EfCLNe4DNyFoEA" name="Turn on system" incoming="_1zwLQKA2EfCLNe4DNyFoEA" outgoing="_6JElsKA2EfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_mkcIcKA2EfCLNe4DNyFoEA" name="Check system" incoming="_6JElsKA2EfCLNe4DNyFoEA" outgoing="_DvMycKA3EfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_mndAMKA2EfCLNe4DNyFoEA" name="Start" incoming="_F0UE0KA3EfCLNe4DNyFoEA" outgoing="_XFZLEKA3EfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_nwLi0KA2EfCLNe4DNyFoEA" name="Set desired temperature" incoming="_XFZLEKA3EfCLNe4DNyFoEA" outgoing="_5R2NUKA3EfCLNe4DNyFoEA">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_gl6fEKA3EfCLNe4DNyFoEA" name="" outgoing="_j4hfUKA3EfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_gl8UQKA3EfCLNe4DNyFoEA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_n3vjYKA2EfCLNe4DNyFoEA" name="Reach required temperature" incoming="_5R2NUKA3EfCLNe4DNyFoEA" outgoing="_S-aSIKA4EfCLNe4DNyFoEA">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_L8sGYKA5EfCLNe4DNyFoEA" name="" incoming="_Qe1b4KA5EfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_L8tUgKA5EfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_n5X7EKA2EfCLNe4DNyFoEA" name="Maintain reached temperature" incoming="_VUWOwKA4EfCLNe4DNyFoEA" outgoing="_a7OXsKA4EfCLNe4DNyFoEA">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_OaLcgKA5EfCLNe4DNyFoEA" name="" incoming="_SDcCMKA5EfCLNe4DNyFoEA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_OaMDkKA5EfCLNe4DNyFoEA" value="1"/>
+                </inputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_n60FgKA2EfCLNe4DNyFoEA" name="Turn off" incoming="_s_gcgKA4EfCLNe4DNyFoEA" outgoing="_yQnJwKA4EfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_n8aA8KA2EfCLNe4DNyFoEA" name="Shut down" incoming="_yQnJwKA4EfCLNe4DNyFoEA _KdqOgKA3EfCLNe4DNyFoEA" outgoing="_-xoaUKA4EfCLNe4DNyFoEA"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_B3wvsKA3EfCLNe4DNyFoEA" name="" incoming="_DvMycKA3EfCLNe4DNyFoEA" outgoing="_F0UE0KA3EfCLNe4DNyFoEA _KdqOgKA3EfCLNe4DNyFoEA" inPartition="_6Pm5gJ-cEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:ActivityFinalNode" xmi:id="_JP9sUKA3EfCLNe4DNyFoEA" name="" incoming="_-xoaUKA4EfCLNe4DNyFoEA" inPartition="_6Pm5gJ-cEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:ForkNode" xmi:id="_ZrdOYKA3EfCLNe4DNyFoEA" name="" incoming="_j4hfUKA3EfCLNe4DNyFoEA" outgoing="_Qe1b4KA5EfCLNe4DNyFoEA _SDcCMKA5EfCLNe4DNyFoEA" inPartition="_2a_YYJ-cEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:MergeNode" xmi:id="_DmHScKA4EfCLNe4DNyFoEA" name="" incoming="_S-aSIKA4EfCLNe4DNyFoEA _mC-IMKA4EfCLNe4DNyFoEA" outgoing="_VUWOwKA4EfCLNe4DNyFoEA" inPartition="_6Pm5gJ-cEfC34NGOgxXT3w"/>
+              <node xmi:type="uml:MergeNode" xmi:id="_Q_V9YKA4EfCLNe4DNyFoEA" name="" incoming="_a7OXsKA4EfCLNe4DNyFoEA" outgoing="_mC-IMKA4EfCLNe4DNyFoEA _s_gcgKA4EfCLNe4DNyFoEA" inPartition="_6Pm5gJ-cEfC34NGOgxXT3w"/>
+            </ownedBehavior>
+          </packagedElement>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_aqTj4J-VEfC34NGOgxXT3w" name="The unit must be able to heat and cool." classifierBehavior="_ryFSQJ-XEfC34NGOgxXT3w" subject="_63ZiEJ7HEfCQUJc3dSHiMw">
+            <ownedBehavior xmi:type="uml:Activity" xmi:id="_ryFSQJ-XEfC34NGOgxXT3w" name="Activity1"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_a1oDEJ-VEfC34NGOgxXT3w" name="I want to be able to start and stop climate control by myself." classifierBehavior="_uZ6QIJ-XEfC34NGOgxXT3w" subject="_63ZiEJ7HEfCQUJc3dSHiMw">
+            <ownedBehavior xmi:type="uml:Activity" xmi:id="_uZ6QIJ-XEfC34NGOgxXT3w" name="Activity1"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_dcA5kJ6wEfCQUJc3dSHiMw" name="3 System Context">
+          <packagedElement xmi:type="uml:Class" xmi:id="_63ZiEJ7HEfCQUJc3dSHiMw" name="Vehicle in Use" useCase="_ku8LQJ7JEfCGy8Hnx-4qKw _aNzOEJ-VEfC34NGOgxXT3w _ac29wJ-VEfC34NGOgxXT3w _aqTj4J-VEfC34NGOgxXT3w _a1oDEJ-VEfC34NGOgxXT3w">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_Et67QJ7IEfCQUJc3dSHiMw" name=" " type="_GfPH4J7IEfCQUJc3dSHiMw" aggregation="composite"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_iKVV8J7IEfCGy8Hnx-4qKw" name=" " type="_jn0AkJ7IEfCGy8Hnx-4qKw" aggregation="composite"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_lEA40J7IEfCGy8Hnx-4qKw" name=" " type="_mro98J7IEfCGy8Hnx-4qKw" aggregation="composite"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_BSbjYJ-aEfC34NGOgxXT3w" name="" type="_B4dBkJ-aEfC34NGOgxXT3w" aggregation="composite"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_sVEGsJ-bEfC34NGOgxXT3w" name="" type="_0dmUEJ-bEfC34NGOgxXT3w" aggregation="composite"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_GfPH4J7IEfCQUJc3dSHiMw" name="Climate Control Unit">
+            <generalization xmi:type="uml:Generalization" xmi:id="_128JkJ9vEfC34NGOgxXT3w" general="_mg4lkJ9vEfC34NGOgxXT3w"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_jn0AkJ7IEfCGy8Hnx-4qKw" name="Vehicle Occupant">
+            <nestedClassifier xmi:type="uml:Actor" xmi:id="_UePDMJ-VEfC34NGOgxXT3w" name=""/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_mro98J7IEfCGy8Hnx-4qKw" name="Energy Supply"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_B4dBkJ-aEfC34NGOgxXT3w" name="Cabin"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_0dmUEJ-bEfC34NGOgxXT3w" name="Temperature Display Device"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_aWcT4J9tEfC34NGOgxXT3w" name="1 Exchange Items">
+            <packagedElement xmi:type="uml:Signal" xmi:id="_ikEcoJ9tEfC34NGOgxXT3w" name="Control"/>
+            <packagedElement xmi:type="uml:Signal" xmi:id="_lZd8cJ9tEfC34NGOgxXT3w" name="Power"/>
+            <packagedElement xmi:type="uml:Signal" xmi:id="_m6CXUJ9tEfC34NGOgxXT3w" name="Status"/>
+            <packagedElement xmi:type="uml:Signal" xmi:id="_hokI8J-1EfCm_rJDPbG21w" name="Temperature Display"/>
+            <packagedElement xmi:type="uml:Signal" xmi:id="_gPg14J-2EfCm_rJDPbG21w" name="Air"/>
+            <packagedElement xmi:type="uml:Signal" xmi:id="_mLo2EJ-2EfCm_rJDPbG21w" name="Temperate Air"/>
+            <packagedElement xmi:type="uml:Signal" xmi:id="_Y1v9kJ-3EfCm_rJDPbG21w" name="Temperature"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_wlqIEJ9tEfC34NGOgxXT3w" name="" conveyed="_ikEcoJ9tEfC34NGOgxXT3w" informationSource="_iKVV8J7IEfCGy8Hnx-4qKw" informationTarget="_Et67QJ7IEfCQUJc3dSHiMw"/>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_h0tm0J9uEfC34NGOgxXT3w" name="" conveyed="_m6CXUJ9tEfC34NGOgxXT3w" informationSource="_Et67QJ7IEfCQUJc3dSHiMw" informationTarget="_iKVV8J7IEfCGy8Hnx-4qKw"/>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_yrmrcJ9uEfC34NGOgxXT3w" name="" conveyed="_lZd8cJ9tEfC34NGOgxXT3w" informationSource="_lEA40J7IEfCGy8Hnx-4qKw" informationTarget="_Et67QJ7IEfCQUJc3dSHiMw"/>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_BbXMMJ-2EfCm_rJDPbG21w" name="" conveyed="_hokI8J-1EfCm_rJDPbG21w" informationSource="_Et67QJ7IEfCQUJc3dSHiMw _sVEGsJ-bEfC34NGOgxXT3w" informationTarget="_sVEGsJ-bEfC34NGOgxXT3w _iKVV8J7IEfCGy8Hnx-4qKw"/>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_T6wfsJ-2EfCm_rJDPbG21w" name="" conveyed="_gPg14J-2EfCm_rJDPbG21w" informationSource="_BSbjYJ-aEfC34NGOgxXT3w" informationTarget="_Et67QJ7IEfCQUJc3dSHiMw"/>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_oorgQJ-2EfCm_rJDPbG21w" name="" conveyed="_mLo2EJ-2EfCm_rJDPbG21w" informationSource="_Et67QJ7IEfCQUJc3dSHiMw" informationTarget="_BSbjYJ-aEfC34NGOgxXT3w"/>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_zOqAcJ-2EfCm_rJDPbG21w" name="" conveyed="_hokI8J-1EfCm_rJDPbG21w" informationSource="_Et67QJ7IEfCQUJc3dSHiMw" informationTarget="_iKVV8J7IEfCGy8Hnx-4qKw"/>
+          <packagedElement xmi:type="uml:InformationFlow" xmi:id="_aG6qgJ-3EfCm_rJDPbG21w" name="" conveyed="_Y1v9kJ-3EfCm_rJDPbG21w" informationSource="_Et67QJ7IEfCQUJc3dSHiMw" informationTarget="_sVEGsJ-bEfC34NGOgxXT3w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_9mEN4J9uEfC34NGOgxXT3w" name="4 Measures of Effectiveness">
+          <packagedElement xmi:type="uml:Class" xmi:id="_mg4lkJ9vEfC34NGOgxXT3w" name="MOEs Holder">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="__zDX4KA0EfCLNe4DNyFoEA" name="" type="_TeItYJ9vEfC34NGOgxXT3w" isDerived="true"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_AdzlEKA1EfCLNe4DNyFoEA" name="" type="_U03PwJ9vEfC34NGOgxXT3w" isDerived="true"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_A0QWMKA1EfCLNe4DNyFoEA" name="" type="_EphfYJ-4EfCm_rJDPbG21w" isDerived="true"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_AGva4J9vEfC34NGOgxXT3w" name="5 Types">
+          <packagedElement xmi:type="uml:Stereotype" xmi:id="_KRCEoJ9vEfC34NGOgxXT3w" name="«moe»">
+            <nestedClassifier xmi:type="uml:DataType" xmi:id="_TeItYJ9vEfC34NGOgxXT3w" name="dbA"/>
+            <nestedClassifier xmi:type="uml:DataType" xmi:id="_U03PwJ9vEfC34NGOgxXT3w" name="Mass[kilograms]"/>
+            <nestedClassifier xmi:type="uml:DataType" xmi:id="_EphfYJ-4EfCm_rJDPbG21w" name="Work[kilojoule]"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qDChYJ41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qDChYZ41EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEAKsJ41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEAKsZ41EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Activities"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEAKsp41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEAKs541EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Allocations"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEAxwJ41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEAxwZ41EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Blocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEAxwp41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEAxw541EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//constraintblocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ConstraintBlocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEAxxJ41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEAxxZ41EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//deprecatedelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_DeprecatedElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEBY0J41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEBY0Z41EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ModelElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEBY0p41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEBY0541EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//portsandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Ports_u0026Flows"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEBY1J41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEBY1Z41EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Requirements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qEBY1p41EfCEdp52BaNN8w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qEB_4J41EfCEdp52BaNN8w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_8YbukJ-ZEfC34NGOgxXT3w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8YjqYJ-ZEfC34NGOgxXT3w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Model>
+  <Requirements:Requirement xmi:id="_tCjQ8J6tEfCQUJc3dSHiMw" base_NamedElement="_tCgNoJ6tEfCQUJc3dSHiMw" id="SN-1.1.1" text="I want to see the ambient temperature on the screen or some other output device. (what screen? -> the VCCU screen. Add to report)" base_Class="_tCgNoJ6tEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_JCRrMJ6uEfCQUJc3dSHiMw" base_NamedElement="_JCOn4J6uEfCQUJc3dSHiMw" id="SN-1.1.2" text="I want to feel a comfortable temperature when inside the cabin." base_Class="_JCOn4J6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_JTk2kJ6uEfCQUJc3dSHiMw" base_NamedElement="_JTjBYJ6uEfCQUJc3dSHiMw" id="SN-1.1.3" text="I want to specify my desired temperature inside the cabin." base_Class="_JTjBYJ6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_Lt5j8J6uEfCQUJc3dSHiMw" base_NamedElement="_Lt3HsJ6uEfCQUJc3dSHiMw" id="SN-1.1.4" text="The unit must be able to heat and cool." base_Class="_Lt3HsJ6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_ML4gcJ6uEfCQUJc3dSHiMw" base_NamedElement="_ML2EMJ6uEfCQUJc3dSHiMw" id="SN-1.1.5" text="I want the unit to consume as little energy as possible." base_Class="_ML2EMJ6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_MjlOwJ6uEfCQUJc3dSHiMw" base_NamedElement="_MjiygJ6uEfCQUJc3dSHiMw" id="SN-1.1.6" text="I want to be able to start and stop climate control by myself." base_Class="_MjiygJ6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_NKwjgJ6uEfCQUJc3dSHiMw" base_NamedElement="_NKuHQJ6uEfCQUJc3dSHiMw" id="SN-1.1.7" text="I want the climate control unit to not be louder than engine when operating in max mode. (what about otherwise? -> report)" base_Class="_NKuHQJ6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_NdAKEJ6uEfCQUJc3dSHiMw" base_NamedElement="_Nc-U4J6uEfCQUJc3dSHiMw" id="SN-1.2.1" text="The mass of the VCCU shall not exceed 2 percent of the total car mass." base_Class="_Nc-U4J6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_1w-kMJ6uEfCQUJc3dSHiMw" base_NamedElement="_1w7g4J6uEfCQUJc3dSHiMw" id="SN-1.1" base_Class="_1w7g4J6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_4rP88J6uEfCQUJc3dSHiMw" base_NamedElement="_4rNgsJ6uEfCQUJc3dSHiMw" id="SN-1" base_Class="_4rNgsJ6uEfCQUJc3dSHiMw"/>
+  <Requirements:Requirement xmi:id="_8iYmkJ6uEfCQUJc3dSHiMw" base_NamedElement="_8iWKUJ6uEfCQUJc3dSHiMw" id="SN-1.2" base_Class="_8iWKUJ6uEfCQUJc3dSHiMw"/>
+  <Blocks:Block xmi:id="_63b-UJ7HEfCQUJc3dSHiMw" base_Class="_63ZiEJ7HEfCQUJc3dSHiMw"/>
+  <Blocks:Block xmi:id="_GfRkIJ7IEfCQUJc3dSHiMw" base_Class="_GfPH4J7IEfCQUJc3dSHiMw"/>
+  <Blocks:Block xmi:id="_jn-YoJ7IEfCGy8Hnx-4qKw" base_Class="_jn0AkJ7IEfCGy8Hnx-4qKw"/>
+  <Blocks:Block xmi:id="_mrsoUJ7IEfCGy8Hnx-4qKw" base_Class="_mro98J7IEfCGy8Hnx-4qKw"/>
+  <PortsAndFlows:ItemFlow xmi:id="_wlyD4J9tEfC34NGOgxXT3w" base_InformationFlow="_wlqIEJ9tEfC34NGOgxXT3w"/>
+  <PortsAndFlows:ItemFlow xmi:id="_h07pQJ9uEfC34NGOgxXT3w" base_InformationFlow="_h0tm0J9uEfC34NGOgxXT3w"/>
+  <PortsAndFlows:ItemFlow xmi:id="_yrpHsJ9uEfC34NGOgxXT3w" base_InformationFlow="_yrmrcJ9uEfC34NGOgxXT3w"/>
+  <Blocks:ValueType xmi:id="_TeMXwJ9vEfC34NGOgxXT3w" base_DataType="_TeItYJ9vEfC34NGOgxXT3w"/>
+  <Blocks:ValueType xmi:id="_U05sAJ9vEfC34NGOgxXT3w" base_DataType="_U03PwJ9vEfC34NGOgxXT3w"/>
+  <Blocks:Block xmi:id="_mg7o4J9vEfC34NGOgxXT3w" base_Class="_mg4lkJ9vEfC34NGOgxXT3w"/>
+  <Blocks:Block xmi:id="_B4gE4J-aEfC34NGOgxXT3w" base_Class="_B4dBkJ-aEfC34NGOgxXT3w"/>
+  <Blocks:Block xmi:id="_0drzoJ-bEfC34NGOgxXT3w" base_Class="_0dmUEJ-bEfC34NGOgxXT3w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_6nC-kJ-bEfC34NGOgxXT3w" base_ActivityPartition="_6m_7QJ-bEfC34NGOgxXT3w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_AV2UcJ-cEfC34NGOgxXT3w" base_ActivityPartition="_AVz4MJ-cEfC34NGOgxXT3w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_IN5OwJ-cEfC34NGOgxXT3w" base_ActivityPartition="_IN2ygJ-cEfC34NGOgxXT3w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_2bCbsJ-cEfC34NGOgxXT3w" base_ActivityPartition="_2a_YYJ-cEfC34NGOgxXT3w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_4OFtsJ-cEfC34NGOgxXT3w" base_ActivityPartition="_4ODRcJ-cEfC34NGOgxXT3w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_6PpVwJ-cEfC34NGOgxXT3w" base_ActivityPartition="_6Pm5gJ-cEfC34NGOgxXT3w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_Tn4wYJ-dEfC34NGOgxXT3w" base_ActivityPartition="_Tn2UIJ-dEfC34NGOgxXT3w"/>
+  <PortsAndFlows:ItemFlow xmi:id="_BbhkQJ-2EfCm_rJDPbG21w" base_InformationFlow="_BbXMMJ-2EfCm_rJDPbG21w"/>
+  <PortsAndFlows:ItemFlow xmi:id="_T62mUJ-2EfCm_rJDPbG21w" base_InformationFlow="_T6wfsJ-2EfCm_rJDPbG21w"/>
+  <PortsAndFlows:ItemFlow xmi:id="_oow_0J-2EfCm_rJDPbG21w" base_InformationFlow="_oorgQJ-2EfCm_rJDPbG21w"/>
+  <PortsAndFlows:ItemFlow xmi:id="_zOx8QJ-2EfCm_rJDPbG21w" base_InformationFlow="_zOqAcJ-2EfCm_rJDPbG21w"/>
+  <PortsAndFlows:ItemFlow xmi:id="_aG_jAJ-3EfCm_rJDPbG21w" base_InformationFlow="_aG6qgJ-3EfCm_rJDPbG21w"/>
+  <Blocks:ValueType xmi:id="_EqUJkJ-4EfCm_rJDPbG21w" base_DataType="_EphfYJ-4EfCm_rJDPbG21w"/>
+  <Allocations:AllocateActivityPartition xmi:id="_0SUAIKBWEfCLNe4DNyFoEA" base_ActivityPartition="_0SMEUKBWEfCLNe4DNyFoEA"/>
+  <Allocations:AllocateActivityPartition xmi:id="_1HTHYKBWEfCLNe4DNyFoEA" base_ActivityPartition="_1HRSMKBWEfCLNe4DNyFoEA"/>
+  <Allocations:AllocateActivityPartition xmi:id="_10DfsKBWEfCLNe4DNyFoEA" base_ActivityPartition="_10AcYKBWEfCLNe4DNyFoEA"/>
+</xmi:XMI>

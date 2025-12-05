@@ -1,0 +1,451 @@
+[
+    {
+        "id": "9da33ba3e6487ff0",
+        "type": "tab",
+        "label": "SmartData Command Centre",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "extract_temp",
+        "type": "function",
+        "z": "9da33ba3e6487ff0",
+        "name": "Extract Temperature",
+        "func": "msg.payload = msg.payload?.temperature;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "alertLimitTemp_chart"
+            ]
+        ]
+    },
+    {
+        "id": "extract_hum",
+        "type": "function",
+        "z": "9da33ba3e6487ff0",
+        "name": "Extract Humidity",
+        "func": "msg.payload = msg.payload?.relativeHumidity;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 460,
+        "wires": [
+            [
+                "alertDiffHum_chart"
+            ]
+        ]
+    },
+    {
+        "id": "temp_chart",
+        "type": "ui_chart",
+        "z": "9da33ba3e6487ff0",
+        "name": "Temperature Chart",
+        "group": "14ec9e96a24cc0e2",
+        "width": "",
+        "height": "",
+        "label": "Temperature",
+        "chartType": "line",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "12",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 750,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "hum_chart",
+        "type": "ui_chart",
+        "z": "9da33ba3e6487ff0",
+        "name": "Humidity Chart",
+        "group": "431ba320941c0be9",
+        "label": "Humidity",
+        "chartType": "line",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "removeOlder": "12",
+        "removeOlderUnit": "3600",
+        "outputs": 1,
+        "x": 740,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "alertLimitTemp_in",
+        "type": "mqtt in",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Limit Temp",
+        "topic": "comcs/alertLimitTemp",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "1c1ebf7295542059",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "extract_temp"
+            ]
+        ]
+    },
+    {
+        "id": "alertLimitHum_in",
+        "type": "mqtt in",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Limit Hum",
+        "topic": "comcs/alertLimitHum",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "1c1ebf7295542059",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "5195bbef8480ef17"
+            ]
+        ]
+    },
+    {
+        "id": "alertDiffTemp_in",
+        "type": "mqtt in",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Diff Temp",
+        "topic": "comcs/alertDiffTemp",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "1c1ebf7295542059",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "5d12488da8386324"
+            ]
+        ]
+    },
+    {
+        "id": "alertDiffHum_in",
+        "type": "mqtt in",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Diff Hum",
+        "topic": "comcs/alertDiffHum",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "1c1ebf7295542059",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "extract_hum"
+            ]
+        ]
+    },
+    {
+        "id": "alertLimitTemp_chart",
+        "type": "ui_chart",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Limit Temp",
+        "group": "8f7a22cec3986ea1",
+        "order": 1,
+        "label": "Alert Limit Temperature",
+        "chartType": "line",
+        "interpolate": "linear",
+        "removeOlder": "12",
+        "removeOlderUnit": "3600",
+        "outputs": 1,
+        "x": 760,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "alertLimitHum_chart",
+        "type": "ui_chart",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Limit Hum",
+        "group": "8f7a22cec3986ea1",
+        "order": 2,
+        "label": "Alert Limit Humidity",
+        "chartType": "line",
+        "interpolate": "linear",
+        "removeOlder": "12",
+        "removeOlderUnit": "3600",
+        "outputs": 1,
+        "x": 720,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "alertDiffTemp_chart",
+        "type": "ui_chart",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Diff Temp",
+        "group": "8f7a22cec3986ea1",
+        "order": 3,
+        "label": "Alert Temperature Difference",
+        "chartType": "line",
+        "interpolate": "linear",
+        "removeOlder": "12",
+        "removeOlderUnit": "3600",
+        "outputs": 1,
+        "x": 760,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "alertDiffHum_chart",
+        "type": "ui_chart",
+        "z": "9da33ba3e6487ff0",
+        "name": "Alert Diff Hum",
+        "group": "8f7a22cec3986ea1",
+        "order": 4,
+        "label": "Alert Humidity Difference",
+        "chartType": "line",
+        "interpolate": "linear",
+        "removeOlder": "12",
+        "removeOlderUnit": "3600",
+        "outputs": 1,
+        "x": 700,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "mqtt_sensor_in",
+        "type": "mqtt in",
+        "z": "9da33ba3e6487ff0",
+        "name": "Sensor IN (SmartData)",
+        "topic": "comcs/sensor",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "1c1ebf7295542059",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "84f7ce17540a4dbc",
+                "2d657446d33c3e75"
+            ]
+        ]
+    },
+    {
+        "id": "84f7ce17540a4dbc",
+        "type": "function",
+        "z": "9da33ba3e6487ff0",
+        "name": "Extract Humidity",
+        "func": "msg.payload = msg.payload?.relativeHumidity;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 300,
+        "wires": [
+            [
+                "hum_chart"
+            ]
+        ]
+    },
+    {
+        "id": "5195bbef8480ef17",
+        "type": "function",
+        "z": "9da33ba3e6487ff0",
+        "name": "Extract Humidity",
+        "func": "msg.payload = msg.payload?.relativeHumidity;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 360,
+        "wires": [
+            [
+                "alertLimitHum_chart"
+            ]
+        ]
+    },
+    {
+        "id": "5d12488da8386324",
+        "type": "function",
+        "z": "9da33ba3e6487ff0",
+        "name": "Extract Temperature",
+        "func": "msg.payload = msg.payload?.temperature;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "alertDiffTemp_chart"
+            ]
+        ]
+    },
+    {
+        "id": "2d657446d33c3e75",
+        "type": "function",
+        "z": "9da33ba3e6487ff0",
+        "name": "Extract Temperature",
+        "func": "msg.payload = msg.payload?.temperature;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "temp_chart"
+            ]
+        ]
+    },
+    {
+        "id": "14ec9e96a24cc0e2",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "e9eafd5011bc6a7c",
+        "order": 1,
+        "width": 6
+    },
+    {
+        "id": "431ba320941c0be9",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "e9eafd5011bc6a7c",
+        "order": 2,
+        "width": 6
+    },
+    {
+        "id": "1c1ebf7295542059",
+        "type": "mqtt-broker",
+        "name": "mqtt server",
+        "broker": "2b3715318c674bfbb3ac5bbda2269d25.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "86b9162dc9ec02b2",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8f7a22cec3986ea1",
+        "type": "ui_group",
+        "name": "Alerts",
+        "tab": "e9eafd5011bc6a7c",
+        "order": 3,
+        "width": 6
+    },
+    {
+        "id": "e9eafd5011bc6a7c",
+        "type": "ui_tab",
+        "name": "Command Centre",
+        "icon": "dashboard"
+    },
+    {
+        "id": "86b9162dc9ec02b2",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "certificate.pem",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "44510fea9ca646de",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]

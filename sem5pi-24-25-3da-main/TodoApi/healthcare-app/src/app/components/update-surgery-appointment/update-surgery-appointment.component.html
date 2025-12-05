@@ -1,0 +1,61 @@
+<div class="appointments-container">
+    <h2>Update Surgery Appointment</h2>
+  
+    <!-- Success message -->
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  
+    <!-- Error message -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <form (ngSubmit)="updateAppointment()">
+      <label for="appointment">Select Appointment:</label>
+      <select
+        id="appointment"
+        [(ngModel)]="appointment.id"
+        name="appointment"
+        class="form-control"
+        required
+      >
+        <option value="" disabled selected>Select an Appointment</option>
+        <option *ngFor="let appt of appointments" [value]="appt._id">
+          Room: {{ appt.RoomId }} - Date: {{ appt.Date }} - Status: {{ appt.Status }}
+        </option>
+      </select>
+  
+      <label for="room">Room:</label>
+      <input
+        type="text"
+        id="room"
+        [(ngModel)]="appointment.RoomId"
+        name="room"
+        class="form-control"
+        required
+      />
+  
+      <label for="date">Date:</label>
+      <input
+        type="date"
+        id="date"
+        [(ngModel)]="appointment.Date"
+        name="date"
+        class="form-control"
+        required
+      />
+  
+      <label for="status">Status:</label>
+      <select
+        id="status"
+        [(ngModel)]="appointment.Status"
+        name="status"
+        class="form-control"
+        required
+      >
+        <option value="Acepted">Acepted</option>
+        <option value="Pending">Pending</option>
+        <option value="Canceled">Canceled</option>
+      </select>
+  
+      <button type="submit">Update Appointment</button>
+    </form>
+  </div>
+  

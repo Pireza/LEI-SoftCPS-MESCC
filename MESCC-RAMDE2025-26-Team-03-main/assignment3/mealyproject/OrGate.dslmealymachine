@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dslmealymachine:MealyMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dslmealymachine="http://www.example.org/dslmealymachine" name="Or Logic Gate">
+  <event name="Zero" transition="//@transition.2 //@transition.0"/>
+  <event name="One" transition="//@transition.1 //@transition.3"/>
+  <transition name="OR to False Start" event="//@event.0" output="//@output.1" targetState="//@state.0" sourceState="//@state.1"/>
+  <transition name="Start to Start" event="//@event.1" output="//@output.0" targetState="//@state.0" sourceState="//@state.0"/>
+  <transition name="Start to OR" event="//@event.0" output="//@output.2" targetState="//@state.1" sourceState="//@state.0"/>
+  <transition name="OR to True Start" event="//@event.1" output="//@output.0" targetState="//@state.0" sourceState="//@state.1"/>
+  <initialnode initialState="//@state.0"/>
+  <state name="Start" incoming="//@transition.1 //@transition.3 //@transition.0" outgoing="//@transition.1 //@transition.2" initialnode="//@initialnode"/>
+  <state name="OR gate" incoming="//@transition.2" outgoing="//@transition.3 //@transition.0"/>
+  <output name="True" transition="//@transition.1 //@transition.3"/>
+  <output name="False" transition="//@transition.0"/>
+  <output name="Waiting for boolean" transition="//@transition.2"/>
+</dslmealymachine:MealyMachine>

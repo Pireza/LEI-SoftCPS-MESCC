@@ -1,0 +1,25 @@
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state BinaryParser {
+
+	[*] ---> Start
+
+	Start ---> Binary : **Event**: Zero or One
+
+	Binary ---> Binary : **Event**: Zero or One
+
+	Binary ---> Pattern : **Event**: Any but Zero and One
+
+	Pattern ---> Binary : **Event**: Zero or One
+
+	Pattern ---> Start : **Event**: Any but Zero and One
+
+	Start : **Output**: Input value is not binary
+
+	Binary : **Output**: The value is binary
+
+	Pattern : **Output**: Recognised pattern
+
+}
+@enduml

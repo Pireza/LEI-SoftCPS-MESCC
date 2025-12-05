@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dslmealymachine -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pt.ipp.isep.mescc.ramde.dslmealymachine.presentation.DslmealymachineModelWizardID"
+            name="%_UI_DslmealymachineModelWizard_label"
+            class="pt.ipp.isep.mescc.ramde.dslmealymachine.presentation.DslmealymachineModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DslmealymachineModelFile.gif">
+         <description>%_UI_DslmealymachineModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dslmealymachine -->
+      <editor
+            id="pt.ipp.isep.mescc.ramde.dslmealymachine.presentation.DslmealymachineEditorID"
+            name="%_UI_DslmealymachineEditor_label"
+            icon="icons/full/obj16/DslmealymachineModelFile.gif"
+            extensions="dslmealymachine"
+            class="pt.ipp.isep.mescc.ramde.dslmealymachine.presentation.DslmealymachineEditor"
+            contributorClass="pt.ipp.isep.mescc.ramde.dslmealymachine.presentation.DslmealymachineActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

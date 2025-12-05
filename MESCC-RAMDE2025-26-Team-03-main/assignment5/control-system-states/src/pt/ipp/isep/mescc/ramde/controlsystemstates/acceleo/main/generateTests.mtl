@@ -1,0 +1,133 @@
+[comment encoding = UTF-8 /]
+[module generateTests('http://www.eclipse.org/papyrus/sysml/1.6/SysML',
+                      'http://www.eclipse.org/uml2/5.0.0/UML',
+                      'http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks')]
+
+[template public generateElement(aStateMachine : StateMachine)]
+[comment @main/]
+[file (aStateMachine.fileName(), false, 'UTF-8')]
+
+package org.jeasy.states.samples.essTests;
+
+import org.jeasy.states.api.FiniteStateMachine;
+import org.jeasy.states.api.FiniteStateMachineException;
+import org.jeasy.states.api.State;
+import org.jeasy.states.api.Transition;
+import org.jeasy.states.core.FiniteStateMachineBuilder;
+import org.jeasy.states.core.TransitionBuilder;
+import org.junit.Test;
+import org.junit.Before;
+
+import java.util.Set;
+import java.util.HashSet;
+
+import static org.junit.Assert.assertEquals;
+
+[for (t : Transition | aStateMachine.getAllTransitions())]
+import org.jeasy.states.samples.ess.[t.trigger.getEventName().varName()/];
+import org.jeasy.states.samples.ess.[t.getHandlerName().varName()/];
+[/for]
+
+public class [aStateMachine.name.varName()/]Test {
+    [for (s : State | aStateMachine.getAllStates())]
+    private State [s.getStateName().varName().camelCaseName()/];
+    [/for]
+    private Set<State> states;
+
+    [for (t : Transition | aStateMachine.getAllTransitions())]
+    private Transition [t.getTransitionName().varName().camelCaseName()/];
+    [/for]
+
+    @Before
+    public void setUp() {
+        // Create States
+        [for (s : State | aStateMachine.getAllStates())]
+        [s.getStateName().varName().camelCaseName()/] = new State("[s.name/]");
+        [/for]
+
+        states = new HashSet<>();
+        [for (s : State | aStateMachine.getAllStates())]
+        states.add([s.getStateName().varName().camelCaseName()/]);
+        [/for]
+
+        // Create Transitions
+        [for (t : Transition | aStateMachine.getAllTransitions())]
+        [t.getTransitionName().varName().camelCaseName()/] = new TransitionBuilder()
+            .name("[t.getTransitionName()/]")
+            .sourceState([t.source.oclAsType(State).getStateName().varName().camelCaseName()/])
+            .eventType([t.trigger.getEventName().varName()/].class)
+            .eventHandler(new [t.getHandlerName().varName()/]())
+            .targetState([t.target.oclAsType(State).getStateName().varName().camelCaseName()/])
+            .build();
+
+        [/for]
+    }
+
+
+    [for (t : Transition | aStateMachine.getAllTransitions())]
+    @Test
+    public void shouldChangeTransition_[t.getTransitionName().varName()/]() throws FiniteStateMachineException {
+        FiniteStateMachine fsm = new FiniteStateMachineBuilder(states, [t.source.oclAsType(State).getStateName().varName().camelCaseName()/])
+        [for (tt : Transition | aStateMachine.getAllTransitions())]
+            .registerTransition([tt.getTransitionName().varName().camelCaseName()/])
+        [/for]
+            .build();
+
+        fsm.fire(new [t.trigger.getEventName().varName()/]());
+
+        assertEquals(
+            fsm.getCurrentState(),
+            [t.target.oclAsType(State).getStateName().varName().camelCaseName()/]
+        );
+    }
+
+    [/for]
+
+    @Test
+    public void shouldNotChangeState_InvalidTransitions() throws FiniteStateMachineException {
+        FiniteStateMachine fsm = new FiniteStateMachineBuilder(states, [aStateMachine.getInitialState().getStateName().varName().camelCaseName()/])
+        [for (t : Transition | aStateMachine.getAllTransitions())]
+            .registerTransition([t.getTransitionName().varName().camelCaseName()/])
+        [/for]
+            .build();
+
+        // Pick event of a transition that doesn't start at initial state
+        [for (t : Transition | aStateMachine.getAllTransitions())]
+        [if (not (t.source = aStateMachine.getInitialState()))]
+        fsm.fire(new [t.trigger.getEventName().varName()/]());
+        [/if]
+        [/for]
+
+        assertEquals(
+            fsm.getCurrentState(),
+            [aStateMachine.getInitialState().getStateName().varName().camelCaseName()/]
+        );
+    }
+}
+
+[/file]
+
+[/template]
+
+[query protected getAllStates(sm : StateMachine) : Set(State) = sm.region.subvertex->select(v | v.oclIsKindOf(State))->collect(v | v.oclAsType(State))->asSet()/]
+[query protected getAllTransitions(sm : StateMachine) : Set(Transition) = sm.region.transition->flatten()->select(t | t.source.oclIsKindOf(State))->asSet()/]
+
+[query protected getInitialState(sm : StateMachine) : State =
+    sm.region.subvertex
+    ->select(v | v.oclIsKindOf(Pseudostate) and v.oclAsType(Pseudostate).kind = PseudostateKind::initial)
+    ->any(true).outgoing.target->any(true).oclAsType(State)
+/]
+
+[query protected getStateName(s : State) : String = s.name /]
+[query protected getEventName(e : Trigger) : String = e.name + 'Event' /]
+[query protected getTransitionName(t : Transition) :  String = t.source.name + ' To ' + t.target.name/]
+[query protected getHandlerName(t : Transition) : String = (getTransitionName(t)).varName() /]
+[query protected fileName(sm : StateMachine) : String = sm.name.varName() + 'Test.java' /]
+
+[query protected varName(s : String) : String =
+  s
+    .replaceAll('[^a-zA-Z0-9_]', '')
+    .replaceAll('^[0-9]+', '')
+/]
+
+[query protected camelCaseName(name : String) : String = name.substring(1,1).toLower() + name.substring(2)/]

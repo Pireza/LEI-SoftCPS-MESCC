@@ -1,0 +1,65 @@
+<div class="create-room-container">
+  <h2>Create Room</h2>
+
+  <!-- Room Form -->
+  <form (ngSubmit)="createRoom()">
+    <!-- Error and Success Messages -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+
+    <!-- Room Name -->
+    <div class="form-group">
+      <label for="name">Room Name</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="room.name"
+        name="name"
+        required
+        class="form-control"
+      />
+    </div>
+
+    <!-- Room Type -->
+    <div class="form-group">
+      <label for="type">Room Type</label>
+      <input
+        id="type"
+        type="text"
+        [(ngModel)]="room.type"
+        name="type"
+        required
+        class="form-control"
+      />
+    </div>
+
+    <!-- Room Capacity -->
+    <div class="form-group">
+      <label for="capacity">Room Capacity</label>
+      <input
+        id="capacity"
+        type="number"
+        [(ngModel)]="room.capacity"
+        name="capacity"
+        required
+        class="form-control"
+      />
+    </div>
+
+    <!-- Room Location -->
+    <div class="form-group">
+      <label for="location">Room Location</label>
+      <input
+        id="location"
+        type="text"
+        [(ngModel)]="room.location"
+        name="location"
+        required
+        class="form-control"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Create Room</button>
+  </form>
+</div>

@@ -1,0 +1,65 @@
+{
+    "groundTextureUrl": "./textures/ground.jpg",
+    "wallTextureUrl": "./textures/wall.jpg",
+    "size": {
+        "width": 25,
+        "height": 25
+    },
+    "rooms": [
+        {
+            "name": "or1",
+            "width": 5,
+            "length": 5,
+            "x": -5,
+            "y": 6,
+            "bedDirection": 180.0,
+            "door": "right"
+        },
+        {
+            "name": "or2",
+            "width": 5,
+            "length": 5,
+            "x": -5,
+            "y": -1.0,
+            "bedDirection": 90.0,
+            "door": "left"
+        },
+        {
+            "name": "or3",
+            "width": 5,
+            "length": 5,
+            "x": -5,
+            "y": -8.0,
+            "bedDirection": 270.0,
+            "door": "front"
+        },
+        {
+            "name": "or4",
+            "width": 5,
+            "length": 5,
+            "x": 5,
+            "y": 6,
+            "bedDirection": 0.0,
+            "door": "back"
+        },
+        {
+            "name": "or5",
+            "width": 5,
+            "length": 5,
+            "x": 5,
+            "y": -1.0,
+            "bedDirection": 90.0,
+            "door": "left"
+        },
+        {
+            "name": "or6",
+            "width": 5,
+            "length": 5,
+            "x": 5,
+            "y": -8,
+            "bedDirection": 90.0,
+            "door": "left"
+        }
+        
+    ]
+}

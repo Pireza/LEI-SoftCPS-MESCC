@@ -1,0 +1,91 @@
+[comment encoding = UTF-8 /]
+[module generateCode('http://www.example.org/dslmooremachine')]
+
+[template public generateCode(aMooreMachine : MooreMachine)]
+[comment @main/]
+[file (aMooreMachine.fileName(), false, 'UTF-8')]
+package org.jeasy.states.samples.model;
+
+import org.jeasy.states.api.*;
+import org.jeasy.states.core.*;
+import org.jeasy.states.samples.MooreState;
+import org.jeasy.states.samples.turnstile.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Launcher {
+    public static void main(String['[]'/] args) throws FiniteStateMachineException {
+        [for (state : State | aMooreMachine.state)]
+        State [state.stateName()/] = new MooreState("[state.name/]", "[state.output.name/]");
+        [/for]
+        
+        Set<State> states = new HashSet<>();
+        [for (state : State | aMooreMachine.state)]
+        states.add([state.stateName()/]);
+        [/for]
+        
+        [for (transition : Transition | aMooreMachine.transition)]
+        Transition [transition.transName()/] = new TransitionBuilder()
+            .name("[transition.transName()/]")
+            .sourceState([transition.sourceState.stateName()/])
+            .eventType([transition.event.eventClassName()/].class)
+            .targetState([transition.targetState.stateName()/])
+            .build();
+        [/for]
+        
+        FiniteStateMachine fsm = new FiniteStateMachineBuilder(states, [aMooreMachine.initialnode.initialState.stateName()/])
+        [for (t : Transition | aMooreMachine.transition)]
+        .registerTransition([t.transName()/])
+        [/for]
+        .build();
+        
+        System.out.println("Initial State : " + fsm.getCurrentState().getName());
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Which event do you want to fire?");
+        [for (e : Event | aMooreMachine.event)]
+        System.out.println("[e.name/]");
+        [/for]
+        System.out.println("Press 'q' to quit.");
+        
+        while (true) {
+            String input = scanner.nextLine();
+            [for (e : Event | aMooreMachine.event)]
+            if (input.trim().equalsIgnoreCase("[e.name/]")) {
+                fsm.fire(new [e.eventClassName()/]());
+                System.out.println("State : " + fsm.getCurrentState().getName());
+                System.out.println("Output : " + fsm.getCurrentState().getOutput());
+            }
+            [/for]
+            if (input.trim().equalsIgnoreCase("q")) {
+                System.out.println("Bye!");
+                System.exit(0);
+            }
+        }
+    }
+}
+
+	
+	[for (e : Event | aMooreMachine.event)]
+	[file (e.eventClassName() + '.java', false, 'UTF-8')]
+	package org.jeasy.states.samples.model;
+	
+	import org.jeasy.states.api.AbstractEvent;
+	
+	public class [e.eventClassName()/] extends AbstractEvent {
+	    public [e.eventClassName()/]() {
+	        super("[e.name/]");
+	    }
+	}
+	[/file]
+	[/for]
+
+[/file]
+[/template]
+
+[query protected stateName(s : State) : String = s.name.replaceAll(' ', '').replaceAll('-', '') /]
+[query protected transName(t : Transition) : String = t.sourceState.stateName() + '_' + t.targetState.stateName() /]
+[query protected handlerName(t : Transition) : String = t.sourceState.stateName() + '_' + t.targetState.stateName() + '_' + t.event.eventClassName() /]
+[query protected eventClassName(e : Event) : String = e.name.replaceAll(' ', '').replaceAll('-', '') /]
+[query protected fileName(m : MooreMachine) : String = m.name.replaceAll(' ', '').replaceAll('-', '') + '.java' /]

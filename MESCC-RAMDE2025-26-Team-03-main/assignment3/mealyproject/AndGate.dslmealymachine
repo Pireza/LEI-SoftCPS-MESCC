@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dslmealymachine:MealyMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dslmealymachine="http://www.example.org/dslmealymachine" name="And Logic Gate">
+  <event name="One" transition="//@transition.1 //@transition.2"/>
+  <event name="Zero" transition="//@transition.0 //@transition.3"/>
+  <transition name="Start to Start" event="//@event.1" output="//@output.1" targetState="//@state.0" sourceState="//@state.0"/>
+  <transition name="Start to AND" event="//@event.0" output="//@output.2" targetState="//@state.1" sourceState="//@state.0"/>
+  <transition name="AND to True Start" event="//@event.0" output="//@output.0" targetState="//@state.0" sourceState="//@state.1"/>
+  <transition name="AND to False Start" event="//@event.1" output="//@output.1" targetState="//@state.0" sourceState="//@state.1"/>
+  <initialnode initialState="//@state.0"/>
+  <state name="Start" incoming="//@transition.0 //@transition.2 //@transition.3" outgoing="//@transition.0 //@transition.1" initialnode="//@initialnode"/>
+  <state name="AND Gate" incoming="//@transition.1" outgoing="//@transition.2 //@transition.3"/>
+  <output name="True" transition="//@transition.2"/>
+  <output name="False" transition="//@transition.0 //@transition.3"/>
+  <output name="Waiting for boolean" transition="//@transition.1"/>
+</dslmealymachine:MealyMachine>

@@ -1,0 +1,9 @@
+<form (ngSubmit)="deleteOperationRequest()">
+  <label for="operationRequestId">Select Operation Request to Delete:</label>
+  <select id="operationRequestId" [(ngModel)]="selectedRequestId" name="operationRequestId" required>
+    <option value="" disabled>Select an operation request</option>
+    <option *ngFor="let request of operationRequests" [value]="request.id">
+      Doctor: {{ request.doctor.fullName }} - Deadline: {{ request.deadline }} - Patient: {{ request.patient.firstName }}, {{ request.patient.lastName }} - Priority: {{ request.priority.description }} - Status: {{ request.status }}
+  </select>
+  <button type="submit" [disabled]="!selectedRequestId">Delete Operation Request</button>
+</form>

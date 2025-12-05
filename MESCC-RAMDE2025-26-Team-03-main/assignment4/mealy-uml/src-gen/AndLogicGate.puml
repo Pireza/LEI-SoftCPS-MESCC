@@ -1,0 +1,17 @@
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state AndLogicGate {
+
+	[*] ---> Start
+
+	Start ---> Start : **Event**: Zero\n**Output**: False		
+
+	Start ---> ANDGate : **Event**: One\n**Output**: Waiting for boolean		
+
+	ANDGate ---> Start : **Event**: One\n**Output**: True		
+
+	ANDGate ---> Start : **Event**: Zero\n**Output**: False		
+
+}
+@enduml

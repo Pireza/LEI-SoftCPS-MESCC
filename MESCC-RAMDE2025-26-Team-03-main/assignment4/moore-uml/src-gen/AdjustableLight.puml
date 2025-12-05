@@ -1,0 +1,31 @@
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state AdjustableLight {
+
+	[*] ---> LightOff
+
+	LightOff ---> LightOnDim : **Event**: On pressed
+
+	LightOnDim ---> LightOff : **Event**: Off pressed
+
+	LightOnDim ---> LightOnMedium : **Event**: On pressed
+
+	LightOnMedium ---> LightOff : **Event**: Off pressed
+
+	LightOnMedium ---> LightOnBright : **Event**: On pressed
+
+	LightOnBright ---> LightOff : **Event**: Off pressed
+
+	LightOnBright ---> LightOnDim : **Event**: On pressed
+
+	LightOff : **Output**: Dark
+
+	LightOnDim : **Output**: Low brightness
+
+	LightOnMedium : **Output**: Medium  brightness
+
+	LightOnBright : **Output**: High brightness
+
+}
+@enduml

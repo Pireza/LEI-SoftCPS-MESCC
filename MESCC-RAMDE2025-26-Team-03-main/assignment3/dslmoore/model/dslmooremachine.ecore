@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dslmooremachine" nsURI="http://www.example.org/dslmooremachine"
+    nsPrefix="dslmooremachine">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="MooreMachine">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="onlyOneStateMachinePerDiagramIsAllowed machineNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces machineNameMustStartWithUppercase statesNamesShouldBeUnique transitionsNamesShouldBeUnique outputNamesShouldBeUnique eventNamesShouldBeUnique nameMustHaveThirtyCharactersAtMax nameShouldNotContainSpecialCharacters nameShouldNotContainNumbers twoTransitionsShouldNotTakeTheSameSourceAndEvent"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="onlyOneStateMachinePerDiagramIsAllowed" value="MooreMachine.allInstances() -> size() = 1"/>
+      <details key="machineNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces"
+          value="self.name.trim().size() >= 3"/>
+      <details key="machineNameMustStartWithUppercase" value="self.name.trim().substring(1, 1).toUpper().compareTo(self.name.trim().substring(1, 1)) = 0"/>
+      <details key="statesNamesShouldBeUnique" value="self.state -> forAll(s1, s2 | s1 &lt;> s2 implies s1.name.trim().equalsIgnoreCase(s2.name.trim()) = false)"/>
+      <details key="transitionsNamesShouldBeUnique" value="self.transition -> forAll(t1, t2 | t1 &lt;> t2 implies t1.name.trim().equalsIgnoreCase(t2.name.trim()) = false)"/>
+      <details key="outputNamesShouldBeUnique" value="self.output -> forAll(o1, o2 | o1 &lt;> o2 implies o1.name.trim().equalsIgnoreCase(o2.name.trim()) = false)"/>
+      <details key="eventNamesShouldBeUnique" value="self.event -> forAll(e1, e2 | e1 &lt;> e2 implies e1.name.trim().equalsIgnoreCase(e2.name.trim()) = false)"/>
+      <details key="nameMustHaveThirtyCharactersAtMax" value="self.name.trim().size() &lt;= 30"/>
+      <details key="nameShouldNotContainSpecialCharacters" value="self.name.characters()->forAll(c | '\\|!&quot;@#£$§%&amp;/{[]=}?\'»«+*¨`´~^.:,;'.indexOf(c) = 0)"/>
+      <details key="nameShouldNotContainNumbers" value="self.name.characters()->forAll(c | '0123456789'.indexOf(c) = 0)"/>
+      <details key="twoTransitionsShouldNotTakeTheSameSourceAndEvent" value="self.transition -> forAll(t1, t2 | (t1 &lt;> t2 and t1.event = t2.event implies t1.sourceState &lt;> t2.sourceState) or (t1 &lt;> t2 and t1.sourceState = t2.sourceState implies t1.event &lt;> t2.event))"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialnode" lowerBound="1"
+        eType="#//InitialNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" upperBound="-1"
+        eType="#//Event" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        upperBound="-1" eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
+        upperBound="-1" eType="#//Output" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="2" upperBound="-1"
+        eType="#//State" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="eventNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces eventNameMustStartWithUppercase nameMustHaveThirtyCharactersAtMax nameShouldNotContainSpecialCharacters nameShouldNotContainNumbers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="eventNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces"
+          value="self.name.trim().size() >= 3"/>
+      <details key="eventNameMustStartWithUppercase" value="self.name.trim().substring(1, 1).toUpper().compareTo(self.name.trim().substring(1, 1)) = 0"/>
+      <details key="nameMustHaveThirtyCharactersAtMax" value="self.name.trim().size() &lt;= 30"/>
+      <details key="nameShouldNotContainSpecialCharacters" value="self.name.characters()->forAll(c | '\\|!&quot;@#£$§%&amp;/{[]=}?\'»«+*¨`´~^.:,;'.indexOf(c) = 0)"/>
+      <details key="nameShouldNotContainNumbers" value="self.name.characters()->forAll(c | '0123456789'.indexOf(c) = 0)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        upperBound="-1" eType="#//Transition" eOpposite="#//Transition/event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="transitionNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces transitionNameMustStartWithUppercase nameMustHaveThirtyCharactersAtMax nameShouldNotContainSpecialCharacters nameShouldNotContainNumbers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="transitionNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces"
+          value="self.name.trim().size() >= 3"/>
+      <details key="transitionNameMustStartWithUppercase" value="self.name.trim().substring(1, 1).toUpper().compareTo(self.name.trim().substring(1, 1)) = 0"/>
+      <details key="nameMustHaveThirtyCharactersAtMax" value="self.name.trim().size() &lt;= 30"/>
+      <details key="nameShouldNotContainSpecialCharacters" value="self.name.characters()->forAll(c | '\\|!&quot;@#£$§%&amp;/{[]=}?\'»«+*¨`´~^.:,;'.indexOf(c) = 0)"/>
+      <details key="nameShouldNotContainNumbers" value="self.name.characters()->forAll(c | '0123456789'.indexOf(c) = 0)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        eOpposite="#//Event/transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" lowerBound="1"
+        eType="#//State" eOpposite="#//State/incoming"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceState" lowerBound="1"
+        eType="#//State" eOpposite="#//State/outgoing"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Output">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="outputNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces outputNameMustStartWithUppercase nameMustHaveThirtyCharactersAtMax nameShouldNotContainSpecialCharacters nameShouldNotContainNumbers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="outputNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces"
+          value="self.name.trim().size() >= 3"/>
+      <details key="outputNameMustStartWithUppercase" value="self.name.trim().substring(1, 1).toUpper().compareTo(self.name.trim().substring(1, 1)) = 0"/>
+      <details key="nameMustHaveThirtyCharactersAtMax" value="self.name.trim().size() &lt;= 30"/>
+      <details key="nameShouldNotContainSpecialCharacters" value="self.name.characters()->forAll(c | '\\|!&quot;@#£$§%&amp;/{[]=}?\'»«+*¨`´~^.:,;'.indexOf(c) = 0)"/>
+      <details key="nameShouldNotContainNumbers" value="self.name.characters()->forAll(c | '0123456789'.indexOf(c) = 0)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" upperBound="-1"
+        eType="#//State" eOpposite="#//State/output"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" lowerBound="1"
+        eType="#//State" eOpposite="#//State/initialnode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="stateNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces stateNameMustStartWithUppercase stateShouldBeTheTargetOfAtLeastOneTransition stateShouldBeTheSourceOfAtLeastOneTransition nameMustHaveThirtyCharactersAtMax nameShouldNotContainSpecialCharacters nameShouldNotContainNumbers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="stateNameMustHaveAtLeastThreeCharactersExcludingRepeatingEmptySpaces"
+          value="self.name.trim().size() >= 3"/>
+      <details key="stateNameMustStartWithUppercase" value="self.name.trim().substring(1, 1).toUpper().compareTo(self.name.trim().substring(1, 1)) = 0"/>
+      <details key="stateShouldBeTheTargetOfAtLeastOneTransition" value="self.incoming -> size() >= 1"/>
+      <details key="stateShouldBeTheSourceOfAtLeastOneTransition" value="self.outgoing -> size() >= 1"/>
+      <details key="nameMustHaveThirtyCharactersAtMax" value="self.name.trim().size() &lt;= 30"/>
+      <details key="nameShouldNotContainSpecialCharacters" value="self.name.characters()->forAll(c | '\\|!&quot;@#£$§%&amp;/{[]=}?\'»«+*¨`´~^.:,;'.indexOf(c) = 0)"/>
+      <details key="nameShouldNotContainNumbers" value="self.name.characters()->forAll(c | '0123456789'.indexOf(c) = 0)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
+        eType="#//Output" eOpposite="#//Output/state"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" lowerBound="1"
+        upperBound="-1" eType="#//Transition" eOpposite="#//Transition/targetState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" lowerBound="1"
+        upperBound="-1" eType="#//Transition" eOpposite="#//Transition/sourceState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialnode" eType="#//InitialNode"
+        eOpposite="#//InitialNode/initialState"/>
+  </eClassifiers>
+</ecore:EPackage>

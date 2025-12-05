@@ -1,0 +1,17 @@
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state Turnstile {
+
+	[*] ---> Locked
+
+	Locked ---> Unlocked : **Event**: Coin
+
+	Unlocked ---> Locked : **Event**: Push
+
+	Locked : **Output**: Lock
+
+	Unlocked : **Output**: Unlock
+
+}
+@enduml

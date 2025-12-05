@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px 60px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  outline: none;
+  border-color: #98d478;
+}
+
+button {
+  cursor: pointer;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: 2px solid #a7e784;
+  background-color: #98d478;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #86ba6a;
+  border-color: #76a156;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 3px 3px rgba(0, 120, 255, 0.4);
+}
+
+button.submit-btn {
+  background-color: #27ae60;
+  color: white;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button.submit-btn:hover {
+  background-color: #1e8e4f;
+}
+
+.medical-conditions {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"][name="newCondition"] {
+  margin-right: 10px;
+}
+
+ul.conditions-list {
+  list-style: none;
+  padding: 0;
+}
+
+.conditions-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.conditions-list button {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.popup {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.popup.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.popup.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: transparent;
+  border: 2px solid #333333;
+  border-radius: 25px;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup button:hover {
+  background-color: #333333;
+  color: #fff;
+}

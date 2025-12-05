@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic Thumb Raiser</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #parent {
+            position: absolute;
+            left: 50.0vw;
+        }
+
+        #views-panel {
+            position: absolute;
+            left: -50.0vmin;
+            top: 1vh;
+            z-index: 1;
+            width: 100.0vmin;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 1.5vmin;
+            border-radius: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+
+        #views-panel input[type="button"] {
+            background-color: #98d478;
+            color: #ffffff;
+            border: 2px solid #74ff2970;
+            border-radius: 25px;
+            width: 16ch;
+            height: 5ch;
+            font-size: 1.5vmin;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            line-height: 5ch;
+            transition: all 0.3s ease-in-out;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        #views-panel input[type="button"]:hover {
+            background-color: #86ba6a;
+            border-color: #74ff2970;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #views-panel input[type="number"],
+        #views-panel select {
+            background-color: #ffffff;
+            color: #333333;
+            border: 2px solid #a7e784;
+            border-radius: 10px;
+            width: 12ch;
+            height: 4ch;
+            font-size: 1.5vmin;
+            text-align: center;
+            line-height: 4ch;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+            padding: 0;
+        }
+
+
+
+        #help-panel {
+            position: absolute;
+            left: -50.0vmin;
+            top: 20vh;
+            z-index: 1;
+            width: 100.0vmin;
+            font-family: Arial, sans-serif;
+            font-size: 1.5vmin;
+            color: #333;
+        }
+
+        #subwindows-panel {
+            position: absolute;
+            left: -49.0vw;
+            bottom: -81.0vh;
+            z-index: 1;
+            width: 100.0vmin;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 1.5vmin;
+            color: #333;
+        }
+
+        /* Styling for the room info overlay */
+        #room-info-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            display: none;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 2vmin;
+            z-index: 1000;
+            pointer-events: none;
+            /* Allow interaction with elements beneath the overlay */
+        }
+
+        #room-info-details {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .room-info-title {
+            display: block;
+            margin-bottom: 5px; /* Adjust spacing as needed */
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            border: 2px solid #a7e784;
+            background-color: #74ff2970;
+        }
+
+        table.views {
+            background-color: #74ff2970;
+            text-align: right;
+        }
+
+        table.help {
+            width: 50vmin;
+            background-color: #74ff2970;
+
+        }
+
+        table.subwindows {
+            position: absolute;
+            background-color: #74ff2970;
+            text-align: right;
+            border-radius: 10px;
+
+        }
+
+        th,
+        td {
+            overflow: hidden;
+            border-radius: 10px;
+
+        }
+
+        a {
+            color: white;
+        }
+
+        #view,
+        #projection {
+            width: 18ch;
+            font-size: 1.5vmin;
+        }
+
+        #horizontal,
+        #vertical,
+        #distance,
+        #zoom {
+            width: 10ch;
+            font-size: 1.5vmin;
+        }
+
+        #reset,
+        #reset-all {
+            width: 16ch;
+            font-size: 1.5vmin;
+        }
+
+        input:invalid {
+            background-color: rgb(255, 255, 255);
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="views-panel">
+            <table class="views">
+                <tr>
+                    <td>
+                        <label>View:</label>
+                        <select id="view">
+                            <option value="fixed">Fixed</option>
+                            <option value="top">Top</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label>Orientation (h):</label>
+                        <input type="number" id="horizontal" required>
+                    </td>
+                    <td>
+                        <label>Orientation (v):</label>
+                        <input type="number" id="vertical" required>
+                    </td>
+                    <td>
+                        <input type="button" id="reset" value="Reset view">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Projection:</label>
+                        <select id="projection">
+                            <option value="perspective">Perspective</option>
+                            <option value="orthographic">Orthographic</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label>Distance:</label>
+                        <input type="number" id="distance" required>
+                    </td>
+                    <td>
+                        <label>Zoom:</label>
+                        <input type="number" id="zoom" required>
+                    </td>
+                    <td>
+                        <input type="button" id="reset-all" value="Reset all views">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Room info overlay structure -->
+        <div id="room-info-overlay">
+            <div id="room-info-details">
+                <!-- Room info content will be updated here -->
+            </div>
+        </div>
+        <div id="help-panel">
+            <table class="help" id="help-table">
+                <tr>
+                    <th colspan="2" style="font-size: 3.0vmin">
+                        Help
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: left">Select active view</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Fixed view</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Top view</td>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: left">Toggle view mode</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Single-view mode / multiple-views mode</td>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: left">Display / hide subwindows</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>User interface</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Mini-map</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Help</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Statistics</td>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: left">Move character</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Walk / run (modifier key)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Turn left slowly / quickly</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Turn right slowly / quickly</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Walk / run backward</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Walk / run forward</td>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: left">Emote character</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Jump</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Wave</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Punch</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Thumbs up</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="subwindows-panel">
+            <table class="subwindows">
+                <tr>
+                    <td>
+                        <label>Multiple views:</label>
+                        <input type="checkbox" id="multiple-views">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Mini-map:</label>
+                        <input type="checkbox" id="mini-map">
+                    </td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label>Statistics:</label>
+                        <input type="checkbox" id="statistics">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "../three.js-master/build/three.module.js",
+                "three/addons/": "../three.js-master/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="../lodash/lodash.js"></script>
+    <script type="module">
+        import * as THREE from "three";
+        import Orientation from "./orientation.js";
+        import ThumbRaiser from "./thumb_raiser_template.js";
+
+        let thumbRaiser;
+
+        function initialize() {
+            // Create the game
+            thumbRaiser = new ThumbRaiser(
+                {}, // General Parameters
+                { scale: new THREE.Vector3(1.0, 0.5, 1.0) }, // Maze parameters
+                {}, // Fog parameters
+                { view: "fixed", multipleViewsViewport: new THREE.Vector4(0.0, 1.0, 0.45, 0.5) }, // Fixed view camera parameters
+                { view: "top", multipleViewsViewport: new THREE.Vector4(1.0, 0.0, 0.45, 0.5), initialOrientation: new Orientation(0.0, -90.0), initialDistance: 4.0, distanceMin: 1.0, distanceMax: 16.0 }, // Top view camera parameters
+                { view: "mini-map", multipleViewsViewport: new THREE.Vector4(0.99, 0.02, 0.3, 0.3), initialOrientation: new Orientation(180.0, -90.0), initialZoom: 0.64 } // Mini-msp view camera parameters
+            );
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            // Update the game
+            thumbRaiser.update();
+        }
+        function handleKeyDown(event) {
+            // Check if the 'i' key is pressed to toggle overlay
+            if (event.key === "i") {
+                toggleRoomInfoOverlay();
+            }
+        }
+
+        function handleMouseDown(event) {
+            // Check if the left mouse button (button 1) is pressed
+            if (event.button === 0) { // 0 indicates left mouse button
+                toggleRoomInfoOverlayClose();
+            }
+        }
+
+        function toggleRoomInfoOverlay() {
+            const overlay = document.getElementById("room-info-overlay");
+
+            // Toggle the overlay visibility
+            if (overlay.style.display === "none" || overlay.style.display === "") {
+                overlay.style.display = "flex"; // Show overlay
+                updateRoomInfo();
+            } else {
+                overlay.style.display = "none"; // Hide overlay
+            }
+        }
+        function toggleRoomInfoOverlayClose() {
+            const overlay = document.getElementById("room-info-overlay");
+            overlay.style.display = "none"; // Hide overlay
+
+        }
+        function updateRoomInfo() {
+            const roomInfoContainer = document.getElementById("room-info-details");
+            roomInfoContainer.innerHTML = "<h2>Room Information</h2><p>Details about the room...</p>";
+        }
+        document.addEventListener("keydown", handleKeyDown);
+        document.addEventListener("mousedown", handleMouseDown);
+        initialize();
+        animate();
+    </script>
+</body>
+
+</html>

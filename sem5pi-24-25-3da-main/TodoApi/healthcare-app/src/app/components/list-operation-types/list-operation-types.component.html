@@ -1,0 +1,56 @@
+<div class="container" id="search-form">
+  <h2>Filter Operation Types</h2>
+  
+  <!-- Search Form -->
+  <form (ngSubmit)="onSearch()" class="filter-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="searchParams.name" name="name" class="form-control">
+    </div>
+
+     <div class="form-group">
+      <label for="spec">Specialization</label>
+      <select id="spec" class="form-control" [(ngModel)]="searchParams.specialization" name="specialization">
+        <option value="">None</option>
+        <option *ngFor="let spec of specializations" [value]="spec">{{ spec }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" [(ngModel)]="searchParams.status" name="status" class="form-control">
+        <option [value]="-1">None</option>
+        <option [value]="1">Active</option>
+        <option [value]="0">Inactive</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="submit">Search</button>
+  </form>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <!-- Results Table -->
+  <div *ngIf="operationTypes.length > 0" class="result-box">
+    <h3>Results</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Duration</th>
+          <th>Status</th>
+          <th>Specialized Staff</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let operationType of operationTypes">
+          <td>{{ operationType.name }}</td>
+          <td>{{ operationType.duration }}</td>
+          <td>{{ operationType.status ? 'Active' : 'Inactive' }}</td>
+          <td>{{ operationType.specializedStaff }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

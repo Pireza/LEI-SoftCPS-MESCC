@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dslmooremachine:MooreMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:dslmooremachine="http://www.example.org/dslmooremachine"
+    name="Turnstile">
+  <initialnode
+      initialState="//@state.0"/>
+  <event name="Coin"
+      transition="//@transition.0"/>
+  <event name="Push"
+      transition="//@transition.1"/>
+  <transition
+      name="Locked to Unlocked"
+      event="//@event.0"
+      targetState="//@state.1"
+      sourceState="//@state.0"/>
+  <transition
+      name="Unlocked to Locked"
+      event="//@event.1"
+      targetState="//@state.0"
+      sourceState="//@state.1"/>
+  <output name="Lock"
+      state="//@state.0"/>
+  <output name="Unlock"
+      state="//@state.1"/>
+  <state name="Locked"
+      output="//@output.0"
+      incoming="//@transition.1"
+      outgoing="//@transition.0"
+      initialnode="//@initialnode"/>
+  <state name="Unlocked"
+      output="//@output.1"
+      incoming="//@transition.0"
+      outgoing="//@transition.1"/>
+</dslmooremachine:MooreMachine>

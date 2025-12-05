@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dslmealymachine:MealyMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:dslmealymachine="http://www.example.org/dslmealymachine"
+    name="Light Switch">
+  <event name="On is pressed"
+      transition="//@transition.1"/>
+  <event name="Off is pressed"
+      transition="//@transition.0"/>
+  <transition
+      name="Turn Off"
+      event="//@event.1"
+      output="//@output.1"
+      targetState="//@state.0"
+      sourceState="//@state.1"/>
+  <transition
+      name="Turn On"
+      event="//@event.0"
+      output="//@output.0"
+      targetState="//@state.1"
+      sourceState="//@state.0"/>
+  <initialnode
+      initialState="//@state.0"/>
+  <state name="Light Off"
+      incoming="//@transition.0"
+      outgoing="//@transition.1"
+      initialnode="//@initialnode"/>
+  <state name="Light On"
+      incoming="//@transition.1"
+      outgoing="//@transition.0"/>
+  <output name="Light"
+      transition="//@transition.1"/>
+  <output name="Dark"
+      transition="//@transition.0"/>
+</dslmealymachine:MealyMachine>

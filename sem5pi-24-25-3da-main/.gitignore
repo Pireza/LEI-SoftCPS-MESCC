@@ -1,0 +1,7 @@
+# ignore obj folder
+/TodoApi/obj/
+/TodoApi/bin/
+*.exe
+*.dll
+*.pdb
+node_modules

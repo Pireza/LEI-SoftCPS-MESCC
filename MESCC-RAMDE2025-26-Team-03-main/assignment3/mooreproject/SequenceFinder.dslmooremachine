@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dslmooremachine:MooreMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dslmooremachine="http://www.example.org/dslmooremachine" name="Sequence Finder">
+  <initialnode initialState="//@state.0"/>
+  <event name="A character" transition="//@transition.0 //@transition.2 //@transition.4 //@transition.7"/>
+  <event name="B character" transition="//@transition.3"/>
+  <event name="C character" transition="//@transition.6"/>
+  <event name="Any but A" transition="//@transition.8"/>
+  <event name="Any but A and B" transition="//@transition.1"/>
+  <event name="Any but A and C" transition="//@transition.5"/>
+  <transition name="Start to First" event="//@event.0" targetState="//@state.1" sourceState="//@state.0"/>
+  <transition name="First to Start" event="//@event.4" targetState="//@state.0" sourceState="//@state.1"/>
+  <transition name="First to First" event="//@event.0" targetState="//@state.1" sourceState="//@state.1"/>
+  <transition name="First to Second" event="//@event.1" targetState="//@state.2" sourceState="//@state.1"/>
+  <transition name="Second to First" event="//@event.0" targetState="//@state.1" sourceState="//@state.2"/>
+  <transition name="Second to Start" event="//@event.5" targetState="//@state.0" sourceState="//@state.2"/>
+  <transition name="Second to Sequence" event="//@event.2" targetState="//@state.3" sourceState="//@state.2"/>
+  <transition name="Sequence to First" event="//@event.0" targetState="//@state.1" sourceState="//@state.3"/>
+  <transition name="Sequence to Start" event="//@event.3" targetState="//@state.0" sourceState="//@state.3"/>
+  <output name="Sequence is not present" state="//@state.0"/>
+  <output name="A character found" state="//@state.1"/>
+  <output name="B character found" state="//@state.2"/>
+  <output name="Sequence found" state="//@state.3"/>
+  <state name="Start" output="//@output.0" incoming="//@transition.1 //@transition.5 //@transition.8" outgoing="//@transition.0" initialnode="//@initialnode"/>
+  <state name="First" output="//@output.1" incoming="//@transition.0 //@transition.2 //@transition.4 //@transition.7" outgoing="//@transition.1 //@transition.2 //@transition.3"/>
+  <state name="Second" output="//@output.2" incoming="//@transition.3" outgoing="//@transition.4 //@transition.5 //@transition.6"/>
+  <state name="Sequence" output="//@output.3" incoming="//@transition.6" outgoing="//@transition.7 //@transition.8"/>
+</dslmooremachine:MooreMachine>

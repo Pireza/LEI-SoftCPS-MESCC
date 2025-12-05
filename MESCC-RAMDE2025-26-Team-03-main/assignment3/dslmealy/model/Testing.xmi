@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dslmealymachine:MealyMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:dslmealymachine="http://www.example.org/dslmealymachine"
+    name="Tester">
+  <event name="Press button"
+      transition="//@transition.0 //@transition.1 //@transition.2 //@transition.3"/>
+  <transition
+      name="Turn on"
+      event="//@event.0"
+      output="//@output.1"
+      targetState="//@state.1"
+      sourceState="//@state.0"/>
+  <transition
+      name="Turn off"
+      event="//@event.0"
+      output="//@output.0"
+      targetState="//@state.0"
+      sourceState="//@state.1"/>
+  <transition
+      name="Turn horn off"
+      event="//@event.0"
+      output="//@output.3"
+      targetState="//@state.3"
+      sourceState="//@state.2"/>
+  <transition
+      name="Turn horn on"
+      event="//@event.0"
+      output="//@output.2"
+      targetState="//@state.2"
+      sourceState="//@state.3"/>
+  <initialnode
+      initialState="//@state.0"/>
+  <state name="Light off"
+      incoming="//@transition.1"
+      outgoing="//@transition.0"
+      initialnode="//@initialnode"/>
+  <state name="Light on"
+      incoming="//@transition.0"
+      outgoing="//@transition.1"/>
+  <state name="Horn on"
+      incoming="//@transition.3"
+      outgoing="//@transition.2"/>
+  <state name="Horn off"
+      incoming="//@transition.2"
+      outgoing="//@transition.3"/>
+  <output name="Dark"
+      transition="//@transition.1"/>
+  <output name="Light"
+      transition="//@transition.0"/>
+  <output name="Honk"
+      transition="//@transition.3"/>
+  <output name="Silence"
+      transition="//@transition.2"/>
+</dslmealymachine:MealyMachine>

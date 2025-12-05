@@ -1,0 +1,63 @@
+/* Update Profile Form Styles */
+.update-profile-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Label Styles */
+.update-profile-form label {
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Input Styles */
+.update-profile-form input {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box; /* Ensure consistent sizing */
+    transition: border-color 0.3s ease-in-out;
+}
+
+.update-profile-form input:focus {
+    outline: none;
+    border-color: #98d478; /* Green border on focus */
+}
+
+/* Button Styles */
+.update-profile-form .submit-button {
+    padding: 12px 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer;
+    background-color: #98d478; /* Primary green color */
+    color: white;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.update-profile-form .submit-button:hover {
+    background-color: #86ba6a;
+    transform: translateY(-2px);
+}
+
+.update-profile-form .submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 3px 3px rgba(0, 120, 255, 0.4);
+}

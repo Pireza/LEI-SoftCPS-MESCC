@@ -1,0 +1,329 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: auto;
+  height: 80px;
+  transition: width 0.3s ease-in-out;
+}
+
+.dynamic-content-container {
+  padding: 20px;
+  margin-top: 80px; /* Ensure content starts right below the navbar */
+  flex: 1; /* Allow content to grow downwards and take available space */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+
+/* Form and Table Styles (to ensure no unexpected shifts) */
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Align form and table to the start */
+  justify-content: flex-start;
+  /* Ensure no vertical centering */
+  margin-top: 20px;
+  /* Extra space above if needed */
+}
+
+
+.navbar-wide {
+  width: 100%;
+  left: 0;
+  transform: none;
+}
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.logo-image {
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.table {
+  margin-top: 60px;
+  /* Ensure there's space above the table */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  /* Adjust form spacing */
+}
+
+.error-message {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+
+/* Optional: Prevent excessive shifts when new content loads */
+.result-box {
+  margin-top: 20px;
+  /* Ensures results don’t shift unexpectedly */
+  width: 100%;
+  /* Ensure the result box takes up full available width */
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.styled-button {
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: #98d478;
+  border: 2px solid #a7e784;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.styled-button:hover {
+  background-color: #86ba6a;
+  border-color: #bbb;
+}
+
+.clickable-text {
+  color: #1e7d3a;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 8px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clickable-text:hover {
+  color: #155d29;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.styled-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.styled-link:hover {
+  color: #98d478;
+}
+
+/* Content Section */
+.content-container {
+  width: 60%;
+  max-width: 1200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  gap: 50px;
+  border-radius: 20px;
+}
+
+.text-container {
+  width: 45%;
+}
+
+.image-container {
+  width: 45%;
+}
+
+.image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1100;
+  overflow-y: auto;
+}
+
+/* Highlighted Menu Item */
+.sidebar-menu li.highlighted {
+  background-color: #5a5a5a;
+  /* Green color or any highlight color */
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.sidebar-open {
+  transform: translateX(250px);
+}
+
+.sidebar-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  margin: 20px 0;
+  padding: 10px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  align-items: left;
+  justify-content: left;
+  border-radius: 5px;
+}
+
+.sidebar-menu li:hover {
+  color: #000000;
+  background-color: #5a5a5a;
+  font-weight: bold;
+}
+
+/* Submenu Styles */
+.submenu {
+  list-style: none;
+  padding: 0;
+  background-color: #5a5a5a;
+  margin: 5px 0;
+  border-radius: 5px;
+  width: 100%;
+  /* Ensure submenu takes up full width */
+}
+
+.submenu li {
+  width: 100%;
+  /* Ensure submenu items stretch across the submenu width */
+  box-sizing: border-box;
+  /* Include padding and borders in width */
+  margin: 0;
+  /* Remove default margin */
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  color: white;
+  text-align: left;
+  /* Ensure text aligns to the left */
+}
+
+.submenu li:hover {
+  background-color: #bbb;
+  color: #000000;
+  padding-left: 12px;
+  /* Optional: adjust padding if you want the hover effect to include slight indentation */
+}
+
+
+.highlight-text {
+  color: #98d478;
+  /* Green color */
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle-button {
+  position: fixed;
+  top: 10px;
+  left: 8px;
+  z-index: 1200;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sidebar-toggle-button:hover .toggle-icon {
+  transform: scale(1.1);
+  /* Slight zoom effect on hover */
+}
+
+/* Toggle Button Icon */
+.toggle-icon {
+  width: 25px;
+  /* Adjust the size of the icon */
+  height: 25px;
+  transition: transform 0.3s ease;
+}

@@ -1,0 +1,9 @@
+.venv
+logs/*
+config/db_conn.yaml
+config/mq_conn.yaml
+household_users.json
+*cache*
+.gitignore
+.git
+.env

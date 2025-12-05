@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Deactivate Operation Type</h2>
+  <form (ngSubmit)="deactivateOperationType()">
+    <div class="form-group">
+      <label for="operationTypeId">Select Operation Type:</label>
+      <select id="operationTypeId" [(ngModel)]="selectedOperationTypeId" name="operationTypeId" class="form-control" required>
+        <option *ngFor="let type of operationTypes" [value]="type.id">
+          {{ type.name }}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-danger">Deactivate</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

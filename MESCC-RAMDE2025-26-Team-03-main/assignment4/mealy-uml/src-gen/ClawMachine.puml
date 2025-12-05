@@ -1,0 +1,39 @@
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state ClawMachine {
+
+	[*] ---> Off
+
+	Off ---> OnGrabbermode : **Event**: Press Power button\n**Output**: Machine On		
+
+	OnGrabbermode ---> OnGrabbermode : **Event**: Move lever - Right\n**Output**: Claw moves right		
+
+	OnGrabbermode ---> OnGrabbermode : **Event**: Move lever - Left\n**Output**: Claw moves left		
+
+	OnGrabbermode ---> OnGrabbermode : **Event**: Move lever - Up\n**Output**: Claw moves forwards		
+
+	OnGrabbermode ---> OnGrabbermode : **Event**: Move lever - Down\n**Output**: Claw moves backwards		
+
+	OnDroppermode ---> OnDroppermode : **Event**: Move lever - Right\n**Output**: Claw moves right		
+
+	OnDroppermode ---> OnDroppermode : **Event**: Move lever - Left\n**Output**: Claw moves left		
+
+	OnDroppermode ---> OnDroppermode : **Event**: Move lever - Up\n**Output**: Claw moves forwards		
+
+	OnDroppermode ---> OnDroppermode : **Event**: Move lever - Down\n**Output**: Claw moves backwards		
+
+	OnGrabbermode ---> Clawdown : **Event**: Press Action button\n**Output**: Claw moves downwards		
+
+	Clawdown ---> Pinched : **Event**: Press Action button\n**Output**: Claw pinches		
+
+	Pinched ---> OnDroppermode : **Event**: Press Action button\n**Output**: Claw moves upwards		
+
+	OnDroppermode ---> OnGrabbermode : **Event**: Press Action button\n**Output**: Claw releases		
+
+	OnGrabbermode ---> Off : **Event**: Press Power button\n**Output**: Machine Off		
+
+	OnDroppermode ---> Off : **Event**: Press Power button\n**Output**: Machine Off		
+
+}
+@enduml

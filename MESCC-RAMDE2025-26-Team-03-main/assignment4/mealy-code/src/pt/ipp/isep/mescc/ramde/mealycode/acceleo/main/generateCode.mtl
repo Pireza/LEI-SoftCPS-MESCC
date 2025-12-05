@@ -1,0 +1,107 @@
+[comment encoding = UTF-8 /]
+[module generateCode('http://www.example.org/dslmealymachine')]
+
+[template public generateCode(aMealyMachine : MealyMachine)]
+[comment @main/]
+[file (aMealyMachine.fileName(), false, 'UTF-8')]
+package org.jeasy.states.samples.model;
+
+import org.jeasy.states.samples.MealyState;
+import org.jeasy.states.api.*;
+import org.jeasy.states.core.*;
+import org.jeasy.states.samples.lightswitch.*;
+import java.util.HashSet;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Launcher {
+    public static void main(String['[]'/] args) throws FiniteStateMachineException {
+        [for (state : State | aMealyMachine.state)]
+        State [state.stateName()/] = new MealyState("[state.name/]");
+        [/for]
+        
+        Set<State> states = new HashSet<>();
+        [for (state : State | aMealyMachine.state)]
+        states.add([state.stateName()/]);
+        [/for]
+        
+        [for (transition : Transition | aMealyMachine.transition)]
+        Transition [transition.transName()/] = new TransitionBuilder()
+            .name("[transition.transName()/]")
+            .sourceState([transition.sourceState.stateName()/])
+            .eventType([transition.event.eventClassName()/].class)
+            .eventHandler(new [transition.handlerName()/]())
+            .targetState([transition.targetState.stateName()/])
+            .build();
+        [/for]
+        
+        FiniteStateMachine fsm = new FiniteStateMachineBuilder(states, [aMealyMachine.initialnode.initialState.stateName()/])
+        [for (t : Transition | aMealyMachine.transition)]
+        .registerTransition([t.transName()/])
+        [/for]
+        .build();
+        
+        System.out.println("Initial State : " + fsm.getCurrentState().getName());
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Which event do you want to fire?");
+        [for (e : Event | aMealyMachine.event)]
+        System.out.println("[e.name/]");
+        [/for]
+        System.out.println("Press 'q' to quit.");
+        
+        while (true) {
+            String input = scanner.nextLine();
+            [for (e : Event | aMealyMachine.event)]
+            if (input.trim().equalsIgnoreCase("[e.name/]")) {
+                fsm.fire(new [e.eventClassName()/]());
+                System.out.println("State : " + fsm.getCurrentState().getName());
+            }
+            [/for]
+            if (input.trim().equalsIgnoreCase("q")) {
+                System.out.println("Bye!");
+                System.exit(0);
+            } 
+        }
+    }
+}
+
+
+	[for (t : Transition | aMealyMachine.transition)]
+	[file (t.handlerName() + '.java', false, 'UTF-8')]
+	package org.jeasy.states.samples.model;
+	
+	import org.jeasy.states.api.*;
+	import java.util.Date;
+	
+	public class [t.handlerName()/] implements EventHandler<[t.event.eventClassName()/]> {
+	    public void handleEvent([t.event.eventClassName()/] e) {
+	        System.out.println("Event '" + e.getName() + "' triggered at " + new Date(e.getTimestamp()));
+	        System.out.println("[t.event.name/]");
+	    }
+	}
+	[/file]
+	[/for]
+	
+	[for (e : Event | aMealyMachine.event)]
+	[file (e.eventClassName() + '.java', false, 'UTF-8')]
+	package org.jeasy.states.samples.model;
+	
+	import org.jeasy.states.api.AbstractEvent;
+	
+	public class [e.eventClassName()/] extends AbstractEvent {
+	    public [e.eventClassName()/]() {
+	        super("[e.name/]");
+	    }
+	}
+	[/file]
+	[/for]
+
+[/file]
+[/template]
+
+[query protected stateName(s : State) : String = s.name.replaceAll(' ', '').replaceAll('-', '') /]
+[query protected transName(t : Transition) : String = t.sourceState.stateName() + '_' + t.targetState.stateName() /]
+[query protected handlerName(t : Transition) : String = t.sourceState.stateName() + '_' + t.targetState.stateName() + '_' + t.event.eventClassName() /]
+[query protected eventClassName(e : Event) : String = e.name.replaceAll(' ', '').replaceAll('-', '') /]
+[query protected fileName(m : MealyMachine) : String = m.name.replaceAll(' ', '').replaceAll('-', '') + '.java' /]

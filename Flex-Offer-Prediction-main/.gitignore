@@ -1,0 +1,7 @@
+.venv
+logs/*
+db_conn.yaml
+mq_conn.yaml
+household_users.json
+*cache*
+.env

@@ -1,0 +1,32 @@
+[comment encoding = UTF-8 /]
+[module generateUML('http://www.example.org/dslmooremachine')]
+
+
+[template public generateUML(aMooreMachine : MooreMachine)]
+[comment @main/]
+[file (aMooreMachine.fileName(), false, 'UTF-8')]
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state [aMooreMachine.machineName() /] {
+
+	['[' + '*' + ']'/] ---> [aMooreMachine.getInitialState().stateName() /]
+
+	[for (transition : Transition | aMooreMachine.transition) separator('\n')]
+	[transition.sourceState.stateName()/] ---> [transition.targetState.stateName()/] : **Event**: [transition.event.name/]
+	[/for]
+
+	[for (state: State | aMooreMachine.state) separator('\n')]
+	[state.stateName() /] : **Output**: [state.output.name /]
+	[/for]
+
+}
+@enduml
+[/file]
+[/template]
+
+
+[query protected machineName(m : MooreMachine) : String = m.name.replaceAll(' ', '').replaceAll('-', '')/]
+[query protected stateName(s : State) : String = s.name.replaceAll(' ', '').replaceAll('-', '') /]
+[query protected getInitialState(m: MooreMachine): State = m.initialnode.initialState /]
+[query protected fileName(m : MooreMachine) : String = m.name.replaceAll(' ', '').replaceAll('-', '') + '.puml' /]

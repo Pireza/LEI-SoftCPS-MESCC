@@ -1,0 +1,17 @@
+@startuml
+skinparam stateFontSize 14
+hide empty description
+state OrLogicGate {
+
+	[*] ---> Start
+
+	ORgate ---> Start : **Event**: Zero\n**Output**: False		
+
+	Start ---> Start : **Event**: One\n**Output**: True		
+
+	Start ---> ORgate : **Event**: Zero\n**Output**: Waiting for boolean		
+
+	ORgate ---> Start : **Event**: One\n**Output**: True		
+
+}
+@enduml

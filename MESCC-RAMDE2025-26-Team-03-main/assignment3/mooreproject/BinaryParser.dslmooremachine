@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dslmooremachine:MooreMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dslmooremachine="http://www.example.org/dslmooremachine" name="Binary Parser">
+  <initialnode initialState="//@state.0"/>
+  <event name="Any but Zero and One" transition="//@transition.2 //@transition.4"/>
+  <event name="Zero or One" transition="//@transition.0 //@transition.1 //@transition.3"/>
+  <transition name="Start to Binary" event="//@event.1" targetState="//@state.1" sourceState="//@state.0"/>
+  <transition name="Binary appending" event="//@event.1" targetState="//@state.1" sourceState="//@state.1"/>
+  <transition name="Binary to Pattern" event="//@event.0" targetState="//@state.2" sourceState="//@state.1"/>
+  <transition name="Pattern to Binary" event="//@event.1" targetState="//@state.1" sourceState="//@state.2"/>
+  <transition name="Pattern to Start" event="//@event.0" targetState="//@state.0" sourceState="//@state.2"/>
+  <output name="Input value is not binary" state="//@state.0"/>
+  <output name="The value is binary" state="//@state.1"/>
+  <output name="Recognised pattern" state="//@state.2"/>
+  <state name="Start" output="//@output.0" incoming="//@transition.4" outgoing="//@transition.0" initialnode="//@initialnode"/>
+  <state name="Binary" output="//@output.1" incoming="//@transition.0 //@transition.1 //@transition.3" outgoing="//@transition.1 //@transition.2"/>
+  <state name="Pattern" output="//@output.2" incoming="//@transition.2" outgoing="//@transition.3 //@transition.4"/>
+</dslmooremachine:MooreMachine>

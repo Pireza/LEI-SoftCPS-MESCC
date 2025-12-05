@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dslmooremachine -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pt.ipp.isep.mescc.ramde.dslmooremachine.presentation.DslmooremachineModelWizardID"
+            name="%_UI_DslmooremachineModelWizard_label"
+            class="pt.ipp.isep.mescc.ramde.dslmooremachine.presentation.DslmooremachineModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DslmooremachineModelFile.gif">
+         <description>%_UI_DslmooremachineModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dslmooremachine -->
+      <editor
+            id="pt.ipp.isep.mescc.ramde.dslmooremachine.presentation.DslmooremachineEditorID"
+            name="%_UI_DslmooremachineEditor_label"
+            icon="icons/full/obj16/DslmooremachineModelFile.gif"
+            extensions="dslmooremachine"
+            class="pt.ipp.isep.mescc.ramde.dslmooremachine.presentation.DslmooremachineEditor"
+            contributorClass="pt.ipp.isep.mescc.ramde.dslmooremachine.presentation.DslmooremachineActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
